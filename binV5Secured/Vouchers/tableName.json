@@ -1,0 +1,1 @@
+{"tableName":"Vouchers.json","ColumnsSchema":{"BillNumber":{"type":"STRING","allowNull":true,"unique":true},"Date":{"type":"STRING","allowNull":true},"SupplierName":{"type":"STRING","allowNull":true},"AliasName":{"type":"STRING","allowNull":true},"TotalAmount":{"type":"STRING","allowNull":true}}}

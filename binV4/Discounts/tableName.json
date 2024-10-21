@@ -1,0 +1,1 @@
+{"tableName":"Discounts.json","ColumnsSchema":{"ProductName":{"type":"STRING","allowNull":false},"CostPrice":{"type":"INTEGER","allowNull":true}}}

@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV4/BillsQrCode/Create/SendMail
+Content-Type: application/json
+
+{"ProductName":"","UnitRate":0,"sno":0,"DisPercentage":0,"DisRate":0,"GrossAmout":0,"Barcode":"","BillPk":"","pk":0}

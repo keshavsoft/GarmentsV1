@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV5Secured/SRVoucher/Create/SendMail
+Content-Type: application/json
+
+{"pk":"","Date":"","CustomerName":"","Description":""}

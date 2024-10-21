@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV4/Scan/Create/SendMail
+Content-Type: application/json
+
+{"QrCode":"","CostPrice":0,"ProductName":"","ProductAliasName":"","SalePrice":0,"PercentageValueAddition":0,"UserDescription":"","InventorySerial":0,"PurchasePk":0,"SupplierName":"","BillNumber":0,"RefPk":0}

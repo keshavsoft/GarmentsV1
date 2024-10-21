@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV4/DeliveryStiching/Create/SendMail
+Content-Type: application/json
+
+{"ProductName":"","UnitRate":0,"Discount":0,"GrossAmout":0,"FK":0,"Itempk":0}

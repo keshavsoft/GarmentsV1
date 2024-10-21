@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV4/HeadDeliveryStiching/Create
+Content-Type: application/json
+
+{"Description":"","FK":0}

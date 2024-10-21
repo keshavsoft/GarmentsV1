@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV5Secured/Suppliers/Create/SendMail
+Content-Type: application/json
+
+{"SupplierName":"","AliasName":"","City":"","GST":"","Phone":0}

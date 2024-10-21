@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV4/SalesReturns/Create
+Content-Type: application/json
+
+{"ProductName":"","CostPrice":0,"ProductAliasName":"","SalePrice":0,"PercentageValueAddition":0,"UserDescription":"","SRRef":"","QrCode":""}

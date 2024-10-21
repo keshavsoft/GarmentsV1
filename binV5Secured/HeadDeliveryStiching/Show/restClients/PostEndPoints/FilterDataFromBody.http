@@ -1,0 +1,4 @@
+POST http://localhost:7902/binV5Secured/HeadDeliveryStiching/Show/FilterDataFromBody
+Content-Type: application/json
+
+{"FindKey":"","FindValue":""}
