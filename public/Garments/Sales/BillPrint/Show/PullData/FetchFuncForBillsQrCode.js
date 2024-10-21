@@ -1,36 +1,15 @@
-let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK, inProjectName }) => {
+import ConfigJson from '../../../../config.json' with {type: 'json'};
+
+let FromNode = async () => {
     try {
+        const jVarLocalStartUrl = ConfigJson.StartUrl;
+
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
-        let localItemName = "BillsQrCode";
-
-        let fetchBodyObj = {
-            inFolderName: inFolderName,
-            inFileNameOnly: inFileName,
-            inItemName: "BillsQrCode",
-            inColumnName: "BillPk",
-            inValueToCheck: { "BillPk": inRowPK }
-        };
-
-        // let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/AsArrayWithPK`;
-        let jVarLocalFetchUrl = `/bin/BillsQrCode/FilterData/BillPk/${inRowPK}`;
-
-        let jVarLocalFetchHeaders = {
-            method: "post",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(fetchBodyObj)
-        };
+        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/BillsQrCode/FilterData/BillPk/${inRowPK}`;
 
         const response = await fetch(jVarLocalFetchUrl);
         const data = await response.json();
-
-        // if (data.KTF === false) {
-        //     LocalReturnObject.KReason = data.KReason;
-        //     return await LocalReturnObject;
-        // };
 
         LocalReturnObject.JsonData = data;
 
