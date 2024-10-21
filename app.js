@@ -1,15 +1,12 @@
-import { router as routerForUtility } from "./Utility/routes.js";
 import { router as routerFromCommon } from "./Common/routes.js";
 import { router as routerFromCustom } from "./Custom/routes.js";
-import { router as routerFromLogin } from "./Login/routes.js";
+// import { router as routerFromLogin } from "./Login/routes.js";
 
-import { router as Cors } from "./Cors/routes.js";
+// import { router as Cors } from "./Cors/routes.js";
 
 import { router as routerFromBinV4 } from "./binV4/routes.js";
 
 import { StartFunc as StartFuncPortListen } from "./PortListen.js";
-
-import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
 
 import express from 'express';
 import http from 'http';
@@ -41,21 +38,12 @@ app.get("/k1", (req, res) => {
     res.end("this is k1");
 })
 
-const CommonCorsFunc = (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-};
-
 app.use('/binV4', routerFromBinV4);
 
-app.use('/utility', routerForUtility);
 app.use('/Common', routerFromCommon);
 app.use('/Custom', routerFromCustom);
-app.use('/Login', routerFromLogin);
-app.use('/Cors', CommonCorsFunc, Cors);
-
-StartFuncKWSServer(server);
+// app.use('/Login', routerFromLogin);
+// app.use('/Cors', CommonCorsFunc, Cors);
 
 function normalizePort(val) {
     var port = parseInt(val, 10);
