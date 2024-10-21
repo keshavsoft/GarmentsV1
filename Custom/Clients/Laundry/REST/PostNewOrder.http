@@ -1,6 +1,0 @@
-POST http://localhost:7019/Custom/Clients/Maguva/Transactions/Sales/QrCodes
-content-type: application/json
-
-{
-    "pk": "7777"
-}

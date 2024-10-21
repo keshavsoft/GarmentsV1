@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/BillsStiching/Create/SendMail
-Content-Type: application/json
-
-{"ProductName":"","UnitRate":0,"Discount":0,"GrossAmout":0}

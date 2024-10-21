@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/SalesReturns/Show/FilterDataFromBody
-Content-Type: application/json
-
-{"FindKey":"","FindValue":""}

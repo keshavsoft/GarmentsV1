@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/BillsStiching/Show/FilterDataFromBody
-Content-Type: application/json
-
-{"FindKey":"","FindValue":""}

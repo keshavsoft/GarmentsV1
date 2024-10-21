@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/ScanHead/Create/SendMail
-Content-Type: application/json
-
-{"Description":""}

@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/Items/Create
-Content-Type: application/json
-
-{"ItemName":"","GST":"","Factor":0}

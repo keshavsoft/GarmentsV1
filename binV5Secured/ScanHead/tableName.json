@@ -1,1 +1,0 @@
-{"tableName":"ScanHead.json","ColumnsSchema":{"Date":{"type":"Date","allowNull":false},"Description":{"type":"STRING","allowNull":false}}}

@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/pos/Create
-Content-Type: application/json
-
-{"BillNumber2425":0,"Date":"","CustomerName":"","ContactNumber":"","CustomerNumber":"","PaymentMode":"","GSTNumber":"","DateTime":""}

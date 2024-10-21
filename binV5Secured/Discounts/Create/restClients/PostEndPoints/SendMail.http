@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/Discounts/Create/SendMail
-Content-Type: application/json
-
-{"ProductName":"","CostPrice":0}

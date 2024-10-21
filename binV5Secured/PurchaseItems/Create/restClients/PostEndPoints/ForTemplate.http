@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/PurchaseItems/Create
-Content-Type: application/json
-
-{"FK":"","sno":"","Date":"","Qty":0,"UnitRate":"","Amount":"","ItemName":"","PercentageValueAddition":"","MRP":""}

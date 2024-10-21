@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/Vouchers/Create/SendMail
-Content-Type: application/json
-
-{"BillNumber":"","Date":"","SupplierName":"","AliasName":"","TotalAmount":""}

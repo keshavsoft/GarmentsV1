@@ -1,4 +1,0 @@
-POST http://localhost:7902/binV5Secured/Suppliers/Create
-Content-Type: application/json
-
-{"SupplierName":"","AliasName":"","City":"","GST":"","Phone":0}
