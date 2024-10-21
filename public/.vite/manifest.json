@@ -1,0 +1,63 @@
+{
+  "_dashboardExamples-!~{00a}~.js": {
+    "file": "assets/dashboardExamples-uAeC1gFF.css",
+    "src": "_dashboardExamples-!~{00a}~.js"
+  },
+  "images/6022578b-973d-48ae-b49d-caf7cdb9cc77.png": {
+    "file": "assets/6022578b-973d-48ae-b49d-caf7cdb9cc77-ChAV6v4t.png",
+    "src": "images/6022578b-973d-48ae-b49d-caf7cdb9cc77.png"
+  },
+  "images/Beefree-logo.png": {
+    "file": "assets/Beefree-logo-C2h1psdt.png",
+    "src": "images/Beefree-logo.png"
+  },
+  "images/Group.png": {
+    "file": "assets/Group-BK7N2H16.png",
+    "src": "images/Group.png"
+  },
+  "images/Neighbours_1.png": {
+    "file": "assets/Neighbours_1-DQsqIZq-.png",
+    "src": "images/Neighbours_1.png"
+  },
+  "images/katt-yukawa-K0E6E0a0R3A-unsplash.png": {
+    "file": "assets/katt-yukawa-K0E6E0a0R3A-unsplash-u9_WUVI6.png",
+    "src": "images/katt-yukawa-K0E6E0a0R3A-unsplash.png"
+  },
+  "images/levi-xu-dOhJtfXJZfw-unsplash.png": {
+    "file": "assets/levi-xu-dOhJtfXJZfw-unsplash-DiEapmjV.png",
+    "src": "images/levi-xu-dOhJtfXJZfw-unsplash.png"
+  },
+  "images/priscilla-du-preez-L3lznpRPZbI-unsplash.png": {
+    "file": "assets/priscilla-du-preez-L3lznpRPZbI-unsplash-CwdGia3v.png",
+    "src": "images/priscilla-du-preez-L3lznpRPZbI-unsplash.png"
+  },
+  "images/undraw_gift_box_re_vau4__1__1.png": {
+    "file": "assets/undraw_gift_box_re_vau4__1__1-cQ8eOyLT.png",
+    "src": "images/undraw_gift_box_re_vau4__1__1.png"
+  },
+  "images/undraw_meditation_re_gll0_2.png": {
+    "file": "assets/undraw_meditation_re_gll0_2-B38J5XRV.png",
+    "src": "images/undraw_meditation_re_gll0_2.png"
+  },
+  "images/undraw_messaging_fun_re_vic9.png": {
+    "file": "assets/undraw_messaging_fun_re_vic9-COdT3GdY.png",
+    "src": "images/undraw_messaging_fun_re_vic9.png"
+  },
+  "images/undraw_smiley_face_re_9uid_1.png": {
+    "file": "assets/undraw_smiley_face_re_9uid_1-DvP2JHpz.png",
+    "src": "images/undraw_smiley_face_re_9uid_1.png"
+  },
+  "images/undraw_super_thank_you_re_f8bo.png": {
+    "file": "assets/undraw_super_thank_you_re_f8bo-BFt7fnFx.png",
+    "src": "images/undraw_super_thank_you_re_f8bo.png"
+  },
+  "index.html": {
+    "file": "assets/index-CfbSpWbl.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "assets/index-DPMdiBDE.css"
+    ]
+  }
+}
