@@ -3,8 +3,8 @@
 import { StartFunc as StartFuncQrCodeInput } from "./Inputs/KeyPressFuncs/QrCodeInput.js";
 import { StartFunc as StartFuncButtonsClickFuncs } from "./Pages/QrCodes/ButtonsClickFuncs/StartFunc.js";
 
-let StartFunc = ({ inProjectName }) => {
-    StartFuncButtonsClickFuncs({ inProjectName });
+let StartFunc = () => {
+    StartFuncButtonsClickFuncs();
     StartFuncQrCodeInput();
 };
 

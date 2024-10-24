@@ -3,26 +3,18 @@ import { StartFunc as StartFuncShowOtherQrCodes } from "../../../../ToDom/ShowOt
 import { StartFunc as StartFuncChangeRowColour } from "../../../../ToDom/PurchaseTabs/PurchaseQrCodesTab/ChangeRowColour.js";
 import { FromNode as FromNodeFetchFuncForSales } from "../../../../PullData/FetchFuncForSales.js";
 
-let StartFunc = ({ inProjectName }) => {
+let StartFunc = () => {
     let ShowOtherQrCodesButtonId = document.getElementById("ShowOtherQrCodesButtonId");
 
-    ShowOtherQrCodesButtonId.addEventListener("click", async () => {
-        jVarLocalButtonClickFunc({ inProjectName });
-    });
+    ShowOtherQrCodesButtonId.addEventListener("click", jVarLocalButtonClickFunc);
 };
 
-let jVarLocalButtonClickFunc = async ({ inProjectName }) => {
+let jVarLocalButtonClickFunc = async () => {
     let jVarLocalPurchasePk = document.getElementById("PurchasePkId");
 
-    let jVarFromStartFuncFromShowQrCode = await FromNodeFetchFuncsQrCodes({
-        inProjectName,
-        inValueToCheck: jVarLocalPurchasePk.innerHTML
-    });
+    let jVarFromStartFuncFromShowQrCode = await FromNodeFetchFuncsQrCodes();
 
-    let jVarSaleData = await FromNodeFetchFuncForSales({
-        inProjectName,
-        inValueToCheck: jVarLocalPurchasePk.innerHTML
-    });
+    let jVarSaleData = await FromNodeFetchFuncForSales();
 
     if (jVarFromStartFuncFromShowQrCode.KTF) {
         let jVarLocalClubbedData = jFLocalClubSaleData({

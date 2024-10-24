@@ -1,19 +1,22 @@
-let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK, inProjectName }) => {
+import ConfigJson from '../../../../config.json' with {type: 'json'};
+
+let FromNode = async ({ inRowPK }) => {
+    const jVarLocalStartUrl = ConfigJson.StartUrl;
+
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
-        let jVarLocalFetchUrl = `/bin/Generate/FilterData/pk/${inRowPK}`;
+        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/Generate/RowShow/${inRowPK}`;
         const response = await fetch(jVarLocalFetchUrl);
         const data = await response.json();
 
-        LocalReturnObject.JsonData = data[0];
+        LocalReturnObject.JsonData = data;
         LocalReturnObject.KTF = true;
-        return await LocalReturnObject;
 
+        return await LocalReturnObject;
     } catch (error) {
         console.log("error:", error);
-    }
-
+    };
 };
 
 export { FromNode };

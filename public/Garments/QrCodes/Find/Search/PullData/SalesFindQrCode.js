@@ -1,8 +1,12 @@
-let FromNode = async ({ inRowPK, inProjectName }) => {
+import ConfigJson from '../../../../config.json' with {type: 'json'};
+
+let FromNode = async ({ inRowPK }) => {
+    const jVarLocalStartUrl = ConfigJson.StartUrl;
+
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
-        let jVarLocalFetchUrl = `/bin/BillsQrCode/FilterData/pk/${inRowPK}`;
+        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/BillsQrCode/RowShow/${inRowPK}`;
 
         const response = await fetch(jVarLocalFetchUrl);
         const data = await response.json();

@@ -1,9 +1,14 @@
-let FromNode = async ({ inProjectName, inValueToCheck }) => {
+import ConfigJson from '../../../../config.json' with {type: 'json'};
+
+let FromNode = async () => {
+    const jVarLocalStartUrl = ConfigJson.StartUrl;
+
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
         let jVarLocalRowPK = getUrlQueryParams({ inGetKey: "RowPK" });
 
-        let jVarLocalFetchUrl = `/bin/Generate/FilterData/pk/${jVarLocalRowPK}`;
+        // let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/Generate/FilterData/pk/${jVarLocalRowPK}`;
+        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/Generate/RowShow/${jVarLocalRowPK}`;
 
         const response = await fetch(jVarLocalFetchUrl);
         const data = await response.json();
@@ -20,8 +25,7 @@ let FromNode = async ({ inProjectName, inValueToCheck }) => {
 
     } catch (error) {
         console.log("error:", error);
-    }
-
+    };
 };
 
 

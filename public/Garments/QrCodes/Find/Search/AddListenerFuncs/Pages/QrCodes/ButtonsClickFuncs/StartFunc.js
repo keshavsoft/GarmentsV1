@@ -1,9 +1,9 @@
 import { StartFunc as StartFuncShowQrCodes } from "./ShowQrCodes.js";
 import { StartFunc as StartFuncToModal } from "./ToModal.js";
 
-let StartFunc = ({ inProjectName }) => {
+let StartFunc = () => {
     StartFuncToModal();
-    StartFuncShowQrCodes({ inProjectName });
+    StartFuncShowQrCodes();
 };
 
 export { StartFunc };

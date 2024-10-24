@@ -1,13 +1,13 @@
-import { FromNode } from "../PullData//SalesFindQrCode.js";
+import { FromNode } from "../PullData/SalesFindQrCode.js";
 import { ReturnRowPK } from "../urlSearchParams.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+let StartFunc = async () => {
     let jVarLocalRowPk = ReturnRowPK();
 
     let jVarLocalData = await FromNode({
-        inRowPK: parseInt(jVarLocalRowPk.RowPK),
-        inProjectName
+        inRowPK: parseInt(jVarLocalRowPk.RowPK)
     });
+
     if (jVarLocalData.KTF) {
         if (jVarLocalData.JsonData.length > 0) {
             ShowOnDom();

@@ -1,15 +1,11 @@
 import { FromNode } from "../PullData/FetchFuncs.js";
 import { ReturnRowPK } from "../urlSearchParams.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+let StartFunc = async () => {
     let jVarLocalRowPk = ReturnRowPK();
 
     let jVarLocalData = await FromNode({
-        inFolderName,
-        inFileName,
-        inItemName,
-        inRowPK: jVarLocalRowPk.RowPK,
-        inProjectName
+        inRowPK: jVarLocalRowPk.RowPK
     });
 
     if (jVarLocalData.KTF) {
