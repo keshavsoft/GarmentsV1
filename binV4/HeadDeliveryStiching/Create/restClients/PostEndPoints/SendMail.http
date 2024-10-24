@@ -1,4 +1,4 @@
-POST http://localhost:7902/binV4/HeadDeliveryStiching/Create/SendMail
+POST http://localhost:7327/binV4/HeadDeliveryStiching/Create/SendMail
 Content-Type: application/json
 
 {"Description":"","FK":0}

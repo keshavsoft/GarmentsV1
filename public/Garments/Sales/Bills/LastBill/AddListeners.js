@@ -9,8 +9,10 @@ let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     StartFuncSaveWithButton();
     QrCodeKeyPressAssign({ inFolderName, inFileName, inItemName, inProjectName });
     StartFuncinvKeyPressCal();
+
     localprintButtononClickFunc();
     LocalModalButtonForImageDownloadFuncs();
+    
     localPaymentModeIdBurronClickFuncc();
     LocalModalDeleteButtonClassFuncs();
 };

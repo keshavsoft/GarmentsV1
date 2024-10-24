@@ -1,4 +1,4 @@
-POST http://localhost:7902/binV4/BillsStiching/Create
+POST http://localhost:7327/binV4/BillsStiching/Create
 Content-Type: application/json
 
 {"ProductName":"","UnitRate":0,"Discount":0,"GrossAmout":0}

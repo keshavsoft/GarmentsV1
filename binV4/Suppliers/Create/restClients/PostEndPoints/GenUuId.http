@@ -1,4 +1,4 @@
-POST http://localhost:7902/binV4/Suppliers/Create
+POST http://localhost:7327/binV4/Suppliers/Create
 Content-Type: application/json
 
 {"SupplierName":"","AliasName":"","City":"","GST":"","Phone":0}

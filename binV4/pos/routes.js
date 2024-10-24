@@ -8,6 +8,7 @@ import { router as Search } from './Search/routes.js';
 import { router as Filter } from './Filter/routes.js';
 import { router as RowShow } from './RowShow/routes.js';
 import { router as SearchForStatus } from './SearchForStatus/routes.js';
+import { router as Delete } from './Delete/routes.js';
 
 router.use('/Create', Create);
 router.use('/Show', Show);
@@ -15,5 +16,6 @@ router.use('/Search', Search);
 router.use('/Filter', Filter);
 router.use('/RowShow', RowShow);
 router.use('/SearchForStatus', SearchForStatus);
+router.use('/Delete', Delete);
 
 export { router };

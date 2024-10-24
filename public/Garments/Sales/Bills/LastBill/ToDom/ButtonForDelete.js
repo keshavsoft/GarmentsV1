@@ -1,3 +1,5 @@
+import ConfigJson from '../../../../config.json' with {type: 'json'};
+
 let StartFunc = async (event) => {
     event.preventDefault();
 
@@ -17,15 +19,14 @@ let StartFunc = async (event) => {
             LocalFetchFunc({ RowPk: jVarLocalRowPk })
         }
     });
-
-
-
 };
 
 const LocalFetchFunc = async ({ RowPk }) => {
+    const jVarLocalStartUrl = ConfigJson.StartUrl;
+
     let jVarLocalRowPk = RowPk;
 
-    let jVarLocalFetchUrl = `/bin/BillsQrCode/${jVarLocalRowPk}`;
+    let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/BillsQrCode/Delete/ByPk/${jVarLocalRowPk}`;
     let jVarLocalBodyData = {};
     let jVArLocalHeader = {
         method: "Delete",
@@ -40,11 +41,10 @@ const LocalFetchFunc = async ({ RowPk }) => {
     if (jVarFromFetch.status === 200) {
         window.location.href = "";
     };
+
     if (jVarFromFetch.status === 403) {
         Swal.fire('Row not Deleted..!')
     };
-
-
 }
 
 export { StartFunc };

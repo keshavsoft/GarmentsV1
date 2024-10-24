@@ -1,4 +1,4 @@
-POST http://localhost:7902/binV4/PurchaseItems/Create/SendMail
+POST http://localhost:7327/binV4/PurchaseItems/Create/SendMail
 Content-Type: application/json
 
 {"FK":"","sno":"","Date":"","Qty":0,"UnitRate":"","Amount":"","ItemName":"","PercentageValueAddition":"","MRP":""}
