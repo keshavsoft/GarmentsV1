@@ -7,10 +7,8 @@ let StartFunc = async () => {
 
     if (jVarLocalFromCheck) {
         if (StartFuncCheckVoucherRef()) {
-
             StartFuncFetchFromFuncs().then();
-        }
-
+        };
     };
 };
 

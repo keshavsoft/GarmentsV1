@@ -1,8 +1,4 @@
-let StartFunc = async () => {
-    // let jVarLocalFetchUrl = `/bin/Accounts/DataOnly`;
-    // let response = await fetch(jVarLocalFetchUrl);
-    // let data = await response.json();
-    // localStorage.setItem("AccountNames", JSON.stringify(data));
+let StartFunc = () => {
     jFShowDateTime();
 };
 

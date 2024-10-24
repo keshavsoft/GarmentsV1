@@ -1,1 +1,4 @@
-{"routePath":"bin","tableName":"SRVoucher"}
+{
+    "routePath": "bin",
+    "tableName": "SRVoucher"
+}
