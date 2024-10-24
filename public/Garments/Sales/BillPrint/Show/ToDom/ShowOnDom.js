@@ -3,7 +3,7 @@ import { ReturnRowPK } from "../urlSearchParams.js";
 import { StartFunc as TableFootSuccessStartFunc } from "../FetchFuncs/HtmlPull/TableFootSuccess.js";
 import { StartFunc as StartFuncInventoryGrid } from "./InventoryGrid/PrepareData.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName, inShowSuccess }) => {
+let StartFunc = async () => {
     let jVarLocalRowPk = ReturnRowPK();
     let jVarLocalData = await FromNode();
 
@@ -12,16 +12,15 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName, in
 
     if (jVarLocalData) {
         let localindataJson = jVarLocalData
-        ShowOnDom({ inData: localindataJson, inShowSuccess });
+        ShowOnDom({ inData: localindataJson });
 
         await StartFuncInventoryGrid({
-            inFolderName, inFileName, inItemName, inProjectName, inShowSuccess,
             inRowPk: jVarLocalRowPk.RowPK
         })
     };
 };
 
-let ShowOnDom = ({ inData, inShowSuccess }) => {
+let ShowOnDom = ({ inData }) => {
     let jVarLocalVoucherNameId = document.getElementById("VoucherNameId");
     let jVarLocalCustomerNameId = document.getElementById("CustomerNameId");
 
@@ -49,7 +48,7 @@ let ShowOnDom = ({ inData, inShowSuccess }) => {
         jVarLocalCustomerNumber.innerHTML = inData.CustomerNumber;
     };
 
-    ShowSuccessFunc({ inShowSuccess });
+    // ShowSuccessFunc({ inShowSuccess });
 };
 
 let ShowSuccessFunc = ({ inShowSuccess }) => {
