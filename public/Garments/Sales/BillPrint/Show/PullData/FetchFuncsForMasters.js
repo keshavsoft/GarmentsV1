@@ -1,24 +1,12 @@
-let StartFunc = async ({ inProjectName }) => {
+import ConfigJson from '../../../../config.json' with {type: 'json'};
+
+let StartFunc = async () => {
+    const jVarLocalStartUrl = ConfigJson.StartUrl;
+
     let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
     try {
-        let inFetchPostData = {
-            inFolderName: "Masters",
-            inFileNameOnly: "Items",
-            inItemName: "ItemName",
-            ScreenName: "ForDataList"
-        };
-
-        let jVarLocalFetchUrl = `/bin/Items/DataOnly`;
-
-        let jVarLocalFetchHeaders = {
-            method: "post",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(inFetchPostData)
-        };
+        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/Items/Show/DataOnly`;
 
         const response = await fetch(jVarLocalFetchUrl);
         const data = await response.json();
@@ -26,7 +14,7 @@ let StartFunc = async ({ inProjectName }) => {
         if (data) {
             LocalReturnObject.JsonData = data;
             let localStrogeData = JSON.stringify(data);
-            window.localStorage.setItem("Masters",[localStrogeData]);
+            window.localStorage.setItem("Masters", [localStrogeData]);
         };
 
         LocalReturnObject.KTF = true;

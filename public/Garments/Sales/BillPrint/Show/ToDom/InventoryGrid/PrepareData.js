@@ -3,24 +3,20 @@ import { StartFunc as InvGridStartFunc } from "../InvGrid.js";
 import { StartFunc as FetchFuncsForMasters } from "../../PullData/FetchFuncsForMasters.js";
 import { StartFunc as StartFuncTaxTable } from "../TaxTable.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName, inRowPk }) => {
+let StartFunc = async ({ inRowPk }) => {
     let localpk = inRowPk
 
     let jVarLocalDataToShow = await FetchFuncForBillsQrCode({
-        inFolderName,
-        inFileName,
-        inItemName,
-        inRowPK: localpk,
-        inProjectName
+        inRowPK: localpk
     });
 
     if (jVarLocalDataToShow.KTF) {
         let localdata = jVarLocalDataToShow.JsonData
 
-        await FetchFuncsForMasters({ inProjectName });
+        await FetchFuncsForMasters();
 
         let jVarLocalNewArray = LocalInsertGstPercentage({ inInvData: localdata });
-        
+
         window.localStorage.setItem("InventoryData", JSON.stringify(localdata));
 
         await InvGridStartFunc();

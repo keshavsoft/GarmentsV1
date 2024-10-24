@@ -5,7 +5,6 @@ let StartFunc = async () => {
 };
 
 let jFTotalAmountIdFunc = async ({ inData }) => {
-    console.log("inData : ", inData);
     let jvarLocalTotalAmountId = document.getElementById("TotalAmountId");
     let jvarLocalTotalDiscountId = document.getElementById("TotalDiscountId");
     let jvarLocalTotalNettAmountId = document.getElementById("TotalNettAmountId");
