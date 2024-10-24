@@ -1,11 +1,11 @@
-import ConfigJson from "../../../Config.json" with { type: "json" };
+import GlobalConfigJson from '../../../../../../../config.json' with {type: 'json'};
 
 let StartFunc = async () => {
-    let LocalroutePath = ConfigJson.routePath;
+    let LocalroutePath = GlobalConfigJson.StartUrl;;
     let LocaltableName = "pos";
     let JvarLocalCustomerNumber = jFLocalCustomerNumber();
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/FilterData/pk/${JvarLocalCustomerNumber}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/RowShow/pk/${JvarLocalCustomerNumber}`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
@@ -19,7 +19,5 @@ let jFLocalCustomerNumber = () => {
         return jVarLocalHtmlId.value.trim();
     };
 };
-
-
 
 export { StartFunc };
