@@ -5,7 +5,7 @@ let StartFunc = async () => {
     let LocaltableName = "pos";
     let JvarLocalCustomerNumber = jFLocalCustomerNumber();
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/RowShow/pk/${JvarLocalCustomerNumber}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/RowShow/${JvarLocalCustomerNumber}`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
