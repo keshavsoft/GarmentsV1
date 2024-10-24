@@ -1,22 +1,13 @@
 import { StartFunc as PushDataStartFunc } from "./PushData/FetchFuncs.js";
 
-let LocalCeateNewFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    let jVarLocalCreateNewButtonId = document.getElementById("CreateNewButtonId");
+let StartFunc = () => {
+    let jVarLocalCreateNewButtonId = document.getElementById("SaveButtonId");
 
     jVarLocalCreateNewButtonId.addEventListener("click", async () => {
-        let LocalFromSave = await PushDataStartFunc({
-            inFolderName,
-            inFileName,
-            inItemName,
-            inProjectName
-        });
+        let LocalFromSave = await PushDataStartFunc();
 
         await LocalAfterSaveFunc({ inFetchPostData: LocalFromSave });
     });
-};
-
-let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    LocalCeateNewFunc({ inFolderName, inFileName, inItemName, inProjectName });
 };
 
 let LocalAfterSaveFunc = ({ inFetchPostData }) => {

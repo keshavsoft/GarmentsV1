@@ -1,13 +1,15 @@
 import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
+import ConfigJson from '../../../../config.json' with {type: 'json'};
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+let StartFunc = async () => {
+    const jVarLocalStartUrl = ConfigJson.StartUrl;
+
     let jVarLocalRowPK = getUrlQueryParams({ inGetKey: "RowPK" });
 
     try {
-
         let inFetchPostData = PreparePostDataStartFunc();
 
-        let jVarLocalFetchUrl = `/bin/pos/${jVarLocalRowPK}`;
+        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/pos/Alter/${jVarLocalRowPK}`;
 
         let jVarLocalFetchHeaders = {
             method: "put",
@@ -20,7 +22,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response;
-        console.log("data:",data);
 
         return await data;
     } catch (error) {

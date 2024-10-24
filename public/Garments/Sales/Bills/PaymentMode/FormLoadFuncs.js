@@ -1,10 +1,6 @@
 import { StartFunc as ForCreateNewStartFunc } from "./FetchFuncs/ForCreateNew.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
-};
-
-let ShowOnDomDefaultValuesFromFetch = async () => {
+let StartFunc = async () => {
     let LocalDataFromFetch = await ForCreateNewStartFunc();
     if (LocalDataFromFetch.KTF) {
         let jVarLocalPaymentModeId = document.getElementById('PaymentModeId');
