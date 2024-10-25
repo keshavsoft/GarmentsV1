@@ -2,7 +2,6 @@ import { StartFunc as StartFuncForAccountNames } from "./ForDataList/AccountName
 import {StartFunc as StartFuncForSuggestCustomerNames} from "./SuggestCustomerNames.js"
 import {StartFunc as StartFuncForSuggestCustomerNumbers} from "./SuggestCustomerNumbers.js"
 
-
 const StartFunc = () => {
     StartFuncForSuggestCustomerNames();
     StartFuncForSuggestCustomerNumbers();
