@@ -16,14 +16,14 @@ let StartFunc = async () => {
 };
 
 let HeadDeliveryFetchFunc = async () => {
-    let jVarLocalFetchUrl = `/bin/HeadDeliveryStiching/DataOnly`;
+    let jVarLocalFetchUrl = `/binV4/HeadDeliveryStiching/Show/DataOnly`;
     const response = await fetch(jVarLocalFetchUrl);
     let jVarLocalFromResponse = await response.json();
     return jVarLocalFromResponse;
 };
 
 let StitchingPOSFetchFunc = async () => {
-    let jVarLocalFetchUrl = `/bin/StichingPOS/DataOnly`;
+    let jVarLocalFetchUrl = `/binV4/StichingPOS/Show/DataOnly`;
     const response = await fetch(jVarLocalFetchUrl);
     let jVarLocalFromResponse = await response.json();
     return jVarLocalFromResponse;

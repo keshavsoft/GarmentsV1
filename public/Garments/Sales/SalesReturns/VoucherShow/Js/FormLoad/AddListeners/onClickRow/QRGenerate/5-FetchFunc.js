@@ -2,7 +2,7 @@ import { StartFunc as StartFuncAfterFetch } from "./AfterFetch/EntryFile.js";
 
 const StartFunc = async ({ inRowData }) => {
     let LocalSalesRef = inRowData.pk;
-    let jVarLocalFetchUrl = `/bin/SalesReturns/FilterData/SRRef/${LocalSalesRef}`;
+    let jVarLocalFetchUrl = `/binV4/SalesReturns/FilterData/SRRef/${LocalSalesRef}`;
 
     let response = await fetch(jVarLocalFetchUrl);
     if (response.status === 200) {
