@@ -1,5 +1,5 @@
 let StartFunc = async () => {
-    let LocalUrl = `/bin/Items/DataOnly`
+    let LocalUrl = `/binV4/Items/Show/DataOnly`
     let localfetch = await fetch(LocalUrl);
     let data = await localfetch.json();
     let jVarLocalDataListId = document.getElementById("suggesteditems");
