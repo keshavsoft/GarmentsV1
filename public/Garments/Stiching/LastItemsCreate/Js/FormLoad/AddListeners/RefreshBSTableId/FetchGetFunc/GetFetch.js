@@ -5,7 +5,7 @@ let StartFunc = async () => {
     let LocaltableName = ConfigJson.tableName;
     let jVarLocalStichRef = getUrlQueryParams({ inGetKey: "StichRef" });
     // let jVarLocalFetchUrl = `/${LocalroutePath}/StichingPOS/FilterData/pk/${jVarLocalStichRef}`;
-    let jVarLocalFetchUrl = `/${LocalroutePath}/StichingPOS/MaxRow`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/StichingPOS/Show/MaxRow`;
 
     let response = await fetch(jVarLocalFetchUrl);
     // let data = await response.json();

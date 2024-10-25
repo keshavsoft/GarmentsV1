@@ -25,7 +25,7 @@ let StartFunc = async () => {
 
 let jFLocalCheckQrCode = async () => {
     let jVarLocalQrCode = jFLocalQrCode();
-    let jVarLocalUrl = `/bin/BillsQrCode/Filter/pk/${jVarLocalQrCode}`;
+    let jVarLocalUrl = `/binV4/BillsQrCode/Show/Filter/pk/${jVarLocalQrCode}`;
     const response = await fetch(jVarLocalUrl);
 
     if (response.status === 200) {
