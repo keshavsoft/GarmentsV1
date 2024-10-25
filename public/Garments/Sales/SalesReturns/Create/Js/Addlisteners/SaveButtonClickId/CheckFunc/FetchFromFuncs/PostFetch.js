@@ -7,7 +7,7 @@ let StartFunc = async () => {
 
     let jVarLocalFetchHeaders = await StartFuncFetchHeaders();
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/BillsQrCode/Filter`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/BillsQrCode/Show/Filter`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
     // let data = await response.json();
 
