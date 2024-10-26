@@ -18,13 +18,13 @@ let StartFunc = () => {
 
 function jFLocalInsertItemCount(inData) {
   return Promise.all([
-    fetch("/bin/BillsStiching/dataOnly").then((response) => {
+    fetch("/binV4/BillsStiching/Show/DataOnly").then((response) => {
       if (!response.ok) {
         throw new Error("Failed to load Bill Data");
       }
       return response.json();
     }),
-    fetch("/bin/DeliveryStiching/dataOnly").then((response) => {
+    fetch("/binV4/DeliveryStiching/Show/DataOnly").then((response) => {
       if (!response.ok) {
         throw new Error("Failed to load Delivery data");
       }

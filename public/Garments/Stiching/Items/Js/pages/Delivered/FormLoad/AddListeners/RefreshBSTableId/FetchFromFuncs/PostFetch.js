@@ -3,7 +3,7 @@
 let StartFunc = async () => {
     let jVarLocalTableName = jVarGlobalTableName;
 
-    let jVarLocalFetchUrl = `/bin/DeliveryStiching/DataOnly`;
+    let jVarLocalFetchUrl = `/binV4/DeliveryStiching/Show/DataOnly`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
