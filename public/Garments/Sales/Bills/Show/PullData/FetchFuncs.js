@@ -2,7 +2,7 @@ let StartFunc = async () => {
     let jVarLocalRowPK = getUrlQueryParams({ inGetKey: "RowPK" });
 
     try {
-        let jVarLocalFetchUrl = `/bin/pos/FilterData/pk/${jVarLocalRowPK}`;
+        let jVarLocalFetchUrl = `/binV4/pos/Show/Filter/pk/${jVarLocalRowPK}`;
         // let jVarLocalFetchUrl = `/bin/pos/MaxRow`;
         const response = await fetch(jVarLocalFetchUrl);
         return await response;

@@ -1,7 +1,7 @@
 let StartFunc = async ({ inFetchData }) => {
-
     let LocalinFetchData = await inFetchData.json();
-    let jVarLocalLastRecord = LocalinFetchData[LocalinFetchData.length - 1];
+
+    let jVarLocalLastRecord = LocalinFetchData;
 
     jFLocalToInputCustomerName({ inValue: jVarLocalLastRecord.CustomerName })
 };

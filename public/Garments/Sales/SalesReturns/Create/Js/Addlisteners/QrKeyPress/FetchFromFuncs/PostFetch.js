@@ -6,7 +6,7 @@ let StartFunc = async ({ inRowpk }) => {
     let LocalRowpk = inRowpk;
 
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/Generate/${LocalRowpk}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/Generate/RowShow/${LocalRowpk}`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 

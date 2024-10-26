@@ -6,7 +6,9 @@ let StartFunc = async () => {
     let jVarLocalFromCheck = await StartFuncCheckFunc();
 
     if (jVarLocalFromCheck) {
-        if (StartFuncCheckVoucherRef()) {
+        let LocalCheck = await StartFuncCheckVoucherRef();
+
+        if (LocalCheck) {
             StartFuncFetchFromFuncs().then();
         };
     };

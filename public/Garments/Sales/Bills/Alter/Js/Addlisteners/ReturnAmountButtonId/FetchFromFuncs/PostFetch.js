@@ -4,7 +4,7 @@ let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
     let LocalRowId = jFLocalReturnVoucherId();
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/SalesReturns/FilterData/SRRef/${LocalRowId}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/SalesReturns/Show/Filter/SRRef/${LocalRowId}`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 

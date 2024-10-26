@@ -141,6 +141,8 @@ let GetFilterFunc = async (req, res) => {
         inFilterKey: LocalFilterKey,
         inFilterValue: LocalFilterValue
     });
+    console.log("LocalFromRepo:",LocalFromRepo);
+    
 
     if (LocalFromRepo === false) {
         res.status(500).send(LocalFromRepo.KReason);

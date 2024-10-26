@@ -3,9 +3,8 @@ let StartFunc = async () => {
 };
 
 let jFLocalGetFetch = async () => {
-    let jVarLocalUrl = `/bin/pos/${jFLocalSalesRef()}`;
+    let jVarLocalUrl = `/binV4/pos/RowShow/${jFLocalSalesRef()}`;
     let jVarLocalResponse = await fetch(jVarLocalUrl);
-
     if (jVarLocalResponse.status === 200) {
         return true;
     };

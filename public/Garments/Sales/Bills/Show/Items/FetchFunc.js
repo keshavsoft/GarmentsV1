@@ -2,7 +2,7 @@ let StartFunc = async ({ inProjectName }) => {
     let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
     try {
-        let jVarLocalFetchUrl = `/bin/Items/DataOnly`;
+        let jVarLocalFetchUrl = `/binV4/Items/Show/DataOnly`;
 
         const response = await fetch(jVarLocalFetchUrl);
         const data = await response.json();
