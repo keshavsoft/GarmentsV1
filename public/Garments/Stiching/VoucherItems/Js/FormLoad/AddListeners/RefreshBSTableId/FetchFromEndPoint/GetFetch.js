@@ -4,7 +4,7 @@ let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
     let LocaltableName = ConfigJson.tableName;
     let jVarLocalStichRef = getUrlQueryParams({ inGetKey: "StichRef" });
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/FilterData/FK/${jVarLocalStichRef}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/Show/Filter/FK/${jVarLocalStichRef}`;
     let response = await fetch(jVarLocalFetchUrl);
     // let data = await response.json();
 
