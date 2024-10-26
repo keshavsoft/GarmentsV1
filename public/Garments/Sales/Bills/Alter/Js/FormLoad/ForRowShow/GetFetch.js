@@ -9,7 +9,7 @@ let StartFunc = async () => {
 
 const jFpos = async () => {
     let LocalRowPk = getUrlQueryParams({ inGetKey: "RowPK" });
-    let jVarLocalFetchUrl = `/bin/pos/${LocalRowPk}`;
+    let jVarLocalFetchUrl = `/binV4/pos/RowShow/${LocalRowPk}`;
 
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
@@ -19,7 +19,7 @@ const jFpos = async () => {
 
 const jFBillsQrCode = async () => {
     let LocalRowPk = getUrlQueryParams({ inGetKey: "RowPK" });
-    let jVarLocalFetchUrl = `/bin/BillsQrCode/FilterData/BillPk/${LocalRowPk}`;
+    let jVarLocalFetchUrl = `/binV4/BillsQrCode/Show/Filter/BillPk/${LocalRowPk}`;
 
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();

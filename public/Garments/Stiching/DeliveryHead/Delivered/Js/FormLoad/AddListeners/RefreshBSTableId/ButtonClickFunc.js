@@ -48,7 +48,7 @@ const LocalFetchFunc = async () => {
   let jVarLocalStichRef = getUrlQueryParams({
     inGetKey: "StichRef",
   });
-  let LocalURL = `/bin/DeliveryStiching/FilterData/FK/${jVarLocalStichRef}`;
+  let LocalURL = `/binV4/DeliveryStiching/Show/Filter/FK/${jVarLocalStichRef}`;
   let Response = await fetch(LocalURL);
   let Data = await Response.json();
   console.log("data: ", Data);

@@ -5,7 +5,7 @@ let StartFunc = async () => {
     let jVarLocalTable = ApiConfigJson.tableName;
     let jVarLocalStichRef = getUrlQueryParams({ inGetKey: "StichRef" });
 
-    let jVarLocalFetchUrl = `/${jVarLocalroutePath}/StichingPOS/FilterData/pk/${jVarLocalStichRef}`;
+    let jVarLocalFetchUrl = `/${jVarLocalroutePath}/StichingPOS/Show/Filter/pk/${jVarLocalStichRef}`;
 
     let response = await fetch(jVarLocalFetchUrl);
     

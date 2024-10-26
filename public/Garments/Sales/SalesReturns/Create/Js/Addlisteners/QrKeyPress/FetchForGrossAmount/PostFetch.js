@@ -5,7 +5,7 @@ let StartFunc = async ({ inRowpk }) => {
     let LocaltableName = "BillsQrCode";
     let LocalRowpk = inRowpk;
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/${LocalRowpk}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/RowShow/${LocalRowpk}`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;

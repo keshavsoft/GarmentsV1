@@ -6,7 +6,7 @@ let StartFunc = async () => {
     let LocaltableName = ConfigJson.tableName;
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/Create`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
 
     return await response;

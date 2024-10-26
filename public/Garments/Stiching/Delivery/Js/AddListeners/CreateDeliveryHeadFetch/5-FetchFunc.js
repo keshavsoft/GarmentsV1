@@ -1,7 +1,7 @@
 let StartFunc = async ({ inBodyData }) => {
     let jVarLocalBodyData = inBodyData;
     console.log("jVarLocalBodyData::",jVarLocalBodyData);
-    let jVarLocalFetchUrl = `/binV4/HeadDeliveryStiching/WithCheckAndGenPk`;
+    let jVarLocalFetchUrl = `/binV4/HeadDeliveryStiching/Create`;
 
     let jVarLocalFetchHeaderObject = {
         method: "POST",

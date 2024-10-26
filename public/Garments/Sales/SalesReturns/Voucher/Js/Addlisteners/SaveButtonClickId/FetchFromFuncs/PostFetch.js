@@ -6,7 +6,7 @@ let StartFunc = async () => {
     let LocalroutePath = GlobalConfigJson.StartUrl;
     let LocaltableName = ConfigJson.tableName;
 
-    let jVarLocalFetchHeaders = StartFuncFetchHeaders();
+    let jVarLocalFetchHeaders = await StartFuncFetchHeaders();
     // let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/WithKeysCheck`;
     let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/Create`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);

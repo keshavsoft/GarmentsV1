@@ -2,7 +2,7 @@ let FromNode = async () => {
     try {
         let jVarLocalRowPK = getUrlQueryParams({ inGetKey: "RowPK" });
 
-        let jVarLocalFetchUrl = `/bin/BillsQrCode/FilterData/BillPk/${jVarLocalRowPK}`;
+        let jVarLocalFetchUrl = `/binV4/BillsQrCode/Show/Filter/BillPk/${jVarLocalRowPK}`;
 
         const response = await fetch(jVarLocalFetchUrl);
 

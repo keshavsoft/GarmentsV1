@@ -1,9 +1,6 @@
 let StartFunc = async () => {
     return await jFSalesRefCheck();
 };
-
-
-
 const jFSalesRefCheck = () => {
     let jVarLocalFactory = document.getElementById('SalesRef');
 
