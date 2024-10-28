@@ -58,7 +58,7 @@ let jFLocalHideSpinner = () => {
 };
 
 let jFLocalFetchQrCodes = async () => {
-    let jVarLocalFetchUrl = "/bin/Generate/DataOnly";
+    let jVarLocalFetchUrl = "/binV4/Generate/Show/DataOnly";
     const response = await fetch(jVarLocalFetchUrl);
 
     const text = await response.json();
@@ -66,7 +66,7 @@ let jFLocalFetchQrCodes = async () => {
 };
 
 let jFLocalFetchPurchases = async () => {
-    let jVarLocalFetchUrl = "/bin/Vouchers/DataOnly";
+    let jVarLocalFetchUrl = "/binV4/Vouchers/Show/DataOnly";
     const response = await fetch(jVarLocalFetchUrl);
 
     const text = await response.json();
@@ -74,7 +74,7 @@ let jFLocalFetchPurchases = async () => {
 };
 
 let jFLocalFetchBillsQrCode = async () => {
-    let jVarLocalFetchUrl = "/bin/BillsQrCode/DataOnly";
+    let jVarLocalFetchUrl = "/binV4/BillsQrCode/Show/DataOnly";
     const response = await fetch(jVarLocalFetchUrl);
 
     const text = await response.json();
@@ -82,7 +82,7 @@ let jFLocalFetchBillsQrCode = async () => {
 };
 
 let jFLocalFetchSalesReturns = async () => {
-    let jVarLocalFetchUrl = "/bin/SalesReturns/DataOnly";
+    let jVarLocalFetchUrl = "/binV4/SalesReturns/Show/DataOnly";
     const response = await fetch(jVarLocalFetchUrl);
 
     const text = await response.json();
@@ -90,7 +90,7 @@ let jFLocalFetchSalesReturns = async () => {
 };
 
 let jFLocalFetchScan = async () => {
-    let jVarLocalFetchUrl = "/bin/Scan/DataOnly";
+    let jVarLocalFetchUrl = "/binV4/Scan/Show/DataOnly";
     const response = await fetch(jVarLocalFetchUrl);
 
     const text = await response.json();
