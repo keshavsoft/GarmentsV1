@@ -1,0 +1,60 @@
+{
+    "idfield": "pk",
+    "showFooter": "true",
+    "search": true,
+    "searchHighlight": true,
+    "data": [],
+    "onClickRow": "",
+    "responseHandler": "",
+    "queryParams": "",
+    "pagination": "true",
+    "rowStyle": "rowStyle",
+    "columns": [
+        {
+            "field": "KS-Serial",
+            "title": "#",
+            "formatter": "jFLocalSerialColumn"
+        },
+        {
+            "field": "OrderNumber",
+            "title": "Order #"
+        },
+        {
+            "field": "ProductName",
+            "title": "ProductName"
+        },
+        {
+            "field": "DeliveryDate",
+            "title": "Delivery Date"
+        },
+        {
+            "field": "QrCodeId",
+            "title": "QrCode",
+            "filtercontrol": "select"
+        },
+        {
+            "field": "ItemName",
+            "title": "ItemName",
+            "filtercontrol": "select"
+        },
+        {
+            "field": "Rate",
+            "title": "Rate",
+            "filtercontrol": "select",
+            "footerFormatter": "totalFormatter"
+        },
+        {
+            "title": "SupplierName",
+            "field": "SupplierName"
+        },
+        {
+            "title": "Sales",
+            "field": "Sales"
+        },
+        {
+            "title": "GenSpan",
+            "field": "TimeSpan",
+            "filtercontrol": "select"
+        }
+    ]
+}
