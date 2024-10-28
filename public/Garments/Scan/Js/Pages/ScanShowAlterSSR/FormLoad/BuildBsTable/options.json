@@ -1,0 +1,37 @@
+{
+    "idfield": "pk",
+    "showFooter": "true",
+    "search": true,
+    "searchHighlight": true,
+    "data": [],
+    "onClickRow": "",
+    "responseHandler": "",
+    "queryParams": "",
+    "pagination": "true",
+    "rowStyle": "rowStyle",
+    "columns": [
+        {
+            "field": "KS-Serial",
+            "title": "#",
+            "formatter": "jFLocalSerialColumn"
+        },
+        {
+            "field": "Date",
+            "title": "Date"
+        },
+        {
+            "field": "Discription",
+            "title": "Description"
+        },
+        {
+            "field": "RowScan",
+            "title": "Scan",
+            "formatter": "jFLocalRowScan"
+        },
+        {
+            "field": "RowShow",
+            "title": "Show",
+            "formatter": "jFLocalRowShow"
+        }
+    ]
+}
