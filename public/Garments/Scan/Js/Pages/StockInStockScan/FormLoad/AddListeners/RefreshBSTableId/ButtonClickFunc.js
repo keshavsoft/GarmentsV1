@@ -12,8 +12,23 @@ let jFLocalPromiseAll = async () => {
 
     let [a, b, c, d] = await Promise.allSettled(jVarLocalPromises);
 
-    let jVarLocalReturnArray = a.value.filter(LoopQrCode => !b.value.some(el => el.pk === LoopQrCode.pk))
-        .map(element => (c.value.forEach(Vouchers => element.PurchasePk === Vouchers.pk ? element.PurchaseDate = Vouchers.Date : null), element));
+    // let jVarLocalReturnArray = a.value.filter(LoopQrCode => !b.value.some(el => el.pk === LoopQrCode.pk))
+    //     .map(element => (c.value.forEach(Vouchers => element.PurchasePk === Vouchers.pk ? element.PurchaseDate = Vouchers.Date : null), element));
+
+    let jVarLocalReturnArray = a.value
+        .filter(LoopQrCode => !b.value.some(el => el.pk === LoopQrCode.pk))
+        .map(element => {
+            c.value.forEach(Vouchers => {
+                if (element.PurchasePk === Vouchers?.pk) {
+                    const date = new Date(Vouchers?.Date);
+                    element.PurchaseDate = date.toLocaleDateString('en-GB'); // Format to dd/mm/yyyy
+                    element.BillNumber = Vouchers?.BillNumber;
+                }
+            });
+            return element;
+        });
+
+
 
     jVarLocalReturnArray = jVarLocalReturnArray.map(element => {
         element.Scan = "false"

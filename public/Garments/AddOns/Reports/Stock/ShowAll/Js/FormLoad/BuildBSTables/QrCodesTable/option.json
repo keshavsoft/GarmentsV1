@@ -1,0 +1,79 @@
+{
+    "toolbar": "#toolbar",
+    "search": "true",
+    "searchable": "true",
+    "showFooter": "true",
+    "showPrint": "true",
+    "pagination": "true",
+    "loading-template": "loadingTemplate",
+    "filterControl": "true",
+    "rowStyle": "rowStyle",
+    "stickyHeader": "true",
+    "data": [],
+    "columns": [
+        {
+            "field": "id",
+            "title": "#",
+            "formatter": "jFGlobalSerialColumn"
+        },
+        {
+            "field": "pk",
+            "title": "QR",
+            "filterControl": "input"
+        },
+        {
+            "field": "Purchase_BillNumber",
+            "title": "Phs No",
+            "filterControl": "input"
+        },
+        {
+            "field": "PurchaseDate",
+            "title": "Phs Date"
+        },
+        {
+            "field": "SupplierName",
+            "title": "Vender",
+            "filterControl": "input"
+        },
+        {
+            "field": "ProductName",
+            "titleTooltip": "BillNumber 2024 bills",
+            "title": "Item",
+            "filterControl": "input"
+        },
+        {
+            "field": "CostPrice",
+            "title": "Phs Amt",
+            "align": "right",
+            "footerFormatter": "jFLocalToatalPurchaseRate"
+        },
+        {
+            "field": "PercentageLoaded",
+            "title": "% Loaded",
+            "align": "right",
+            "formatter": "jFPercentageLoaded"
+        },
+        {
+            "field": "AmtLoaded",
+            "title": "Amt Loaded",
+            "align": "right",
+            "footerFormatter": "jFLocalToatalPurchasePerchentageRate"
+        },
+        {
+            "field": "SalePrice",
+            "title": "Sale Amt",
+            "align": "right",
+            "footerFormatter": "jFLocalTotalSaleAmt"
+        },
+        {
+            "field": "Sold",
+            "title": "Sold",
+            "filterControl": "select"
+        },
+        {
+            "field": "ReturnStatus",
+            "title": "Sale Rtrn",
+            "filterControl": "select"
+        }
+    ]
+}

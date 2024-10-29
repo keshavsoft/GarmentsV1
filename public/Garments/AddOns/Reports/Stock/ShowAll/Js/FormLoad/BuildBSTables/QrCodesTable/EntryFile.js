@@ -1,18 +1,13 @@
-import { StartFunc as StartFuncTableTag } from "./TableTag.js";
-import columnsJson from './columns.json' with {type: 'json'};
+import columnsJson from './option.json' with {type: 'json'};
 
 const StartFunc = () => {
-    StartFuncTableTag();
     jFLocalInitialize();
 };
 
 const jFLocalInitialize = () => {
     var $table = $('#table');
 
-    $table.bootstrapTable({
-        columns: columnsJson,
-        data: []
-    });
+    $table.bootstrapTable(columnsJson);
 };
 
 export { StartFunc };
