@@ -2,6 +2,8 @@ let StartFunc = async () => {
     jFLocalHideSpinner();
 
     let jVarLocalQrCodeData = await jFLocalPromiseAll();
+    console.log('jVarLocalQrCodeData:', jVarLocalQrCodeData);
+
     var $table = $('#table');
     $table.bootstrapTable('load', jVarLocalQrCodeData);
 
@@ -13,17 +15,16 @@ let jFLocalPromiseAll = async () => {
     let [a, b, c, d] = await Promise.allSettled(jVarLocalPromises);
 
     let jVarLocalReturnArray = a.value.map(LoopQrCode => {
-
-
         LoopQrCode.Purchased = "false";
         LoopQrCode.Sold = "InStoke";
         LoopQrCode.ReturnStatus = "false";
-        LoopQrCode.AmtLoaded = LoopQrCode.SalePrice - LoopQrCode.CostPrice;
+        LoopQrCode.AmtLoaded = parseInt(LoopQrCode.SalePrice) - parseInt(LoopQrCode.CostPrice);
 
         let LoopInideFind = b.value.find(LoopPurchase => LoopPurchase.pk === LoopQrCode.PurchasePk);
 
-        if (LoopInideFind === undefined === false) if ("Date" in LoopInideFind) LoopQrCode.Purchased = "true";
-        if (LoopInideFind === undefined === false) if ("Date" in LoopInideFind) LoopQrCode.PurchaseDate = LoopInideFind.Date;
+
+        LoopQrCode.PurchaseDate = new Date(LoopInideFind?.Date).toLocaleDateString('en-GB');
+        LoopQrCode.Purchase_BillNumber = LoopInideFind?.BillNumber;
 
         let LoopInideSales = c.value.find(LoopPurchase => LoopPurchase.pk == LoopQrCode.pk);
 

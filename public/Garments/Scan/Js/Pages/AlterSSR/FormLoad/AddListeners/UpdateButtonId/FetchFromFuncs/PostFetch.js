@@ -7,7 +7,7 @@ let StartFunc = async () => {
     let jVarLocalRowPk = getUrlQueryParams({ inGetKey: "inRowPk" });
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/${LocalroutePath}/Scan`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/Scan/Create`;
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
 
     return await response;

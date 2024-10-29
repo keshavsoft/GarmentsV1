@@ -6,7 +6,9 @@
     "showPrint": "true",
     "pagination": "true",
     "loading-template": "loadingTemplate",
-    "row-style": "rowStyle",
+    "filterControl": "true",
+    "rowStyle": "rowStyle",
+    "stickyHeader": "true",
     "data": [],
     "columns": [
         {
@@ -20,7 +22,7 @@
         },
         {
             "field": "ProductName",
-            "title": "ProductName",
+            "title": "Items",
             "align": "right"
         },
         {
@@ -42,18 +44,23 @@
             "footerFormatter": "totalFormatter"
         },
         {
+            "field": "BillNumber",
+            "title": "PchNo",
+            "filterControl": "input"
+        },
+        {
             "field": "SupplierName",
-            "title": "SupplierName"
+            "title": "SupName",
+            "filterControl": "input"
         },
         {
             "field": "PurchaseDate",
-            "title": "PurchaseDate"
+            "title": "PchDate"
         },
         {
             "field": "Scan",
             "title": "Scan",
             "filterControl": "select"
         }
-    ],
-    "rowStyle": "rowStyle"
+    ]
 }

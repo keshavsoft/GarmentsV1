@@ -5,7 +5,7 @@ const StartFunc = async () => {
     let jVarLocalQrCodeID = document.getElementById("QrCodeID").value;
     let Rowpk = parseInt(jVarLocalQrCodeID.substring(2));
 
-    let jVarLocalResponse = await fetch(`/${ConfigJson.GetUrl}/Generate/${Rowpk}`);
+    let jVarLocalResponse = await fetch(`/${ConfigJson.GetUrl}/Generate/RowShow/${Rowpk}`);
     let jVarLocalData = await jVarLocalResponse.json();
 
     return await jVarLocalData;
