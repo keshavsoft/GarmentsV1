@@ -6,9 +6,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <title>
-    Maghuva
-  </title>
+    <title>
+        Maghuva
+    </title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -393,8 +393,12 @@
         <section class="section">
             <div class="row">
                 <div class="col">
-                    <label for=""><h3>Estimation : </h3></label>
-                    <label><h2 id="OrderId" style="font-weight: bold;"></h2></label>
+                    <label for="">
+                        <h3>Estimation : </h3>
+                    </label>
+                    <label>
+                        <h2 id="OrderId" style="font-weight: bold;"></h2>
+                    </label>
                 </div>
             </div>
             <div class="row">
@@ -434,7 +438,7 @@
                                         <th>
                                             Amount
                                         </th>
-                                       
+
                                         <th>
                                             Description
                                         </th>
@@ -453,13 +457,14 @@
                                         </th>
                                         <th>
                                             <div class="input-group">
-                                                <input list="suggesteditems" type="text" class="form-control " id="ProductName"
-                                                    name="ProductName" autofocus>
+                                                <input list="suggesteditems" type="text" class="form-control "
+                                                    id="ProductName" name="ProductName" autofocus>
 
                                             </div>
                                         </th>
                                         <th>
-                                            <input type="number" class="form-control" id="GrossAmount" name="GrossAmount">
+                                            <input type="number" class="form-control" id="GrossAmount"
+                                                name="GrossAmount">
                                         </th>
                                         <!-- <th>
                                             <input type="text" class="form-control" id="DisPercent" name="DisPercent">
@@ -469,7 +474,8 @@
                                                 name="ItemDescription">
                                         </th>
                                         <th>
-                                            <input type="number" class="form-control" id="AddOnAmount" name="AddOnAmount">
+                                            <input type="number" class="form-control" id="AddOnAmount"
+                                                name="AddOnAmount">
                                         </th>
                                         <th></th>
                                         <th></th>
@@ -495,6 +501,11 @@
                                 <tfoot>
                                 </tfoot>
                             </table>
+                            <div>
+                                <button type="button" class="btn btn-primary mt-3 text-center" id="AdvancePaymentId">
+                                    Advance payment
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -577,7 +588,7 @@
                 return sum + i
             }, 0)
         }
-        
+
     </script>
 
     <script>

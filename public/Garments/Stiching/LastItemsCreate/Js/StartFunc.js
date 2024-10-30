@@ -1,5 +1,6 @@
 import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 import { StartFunc as StartFuncFormLoad } from "./FormLoad/StartFunc.js";
+import { StartFunc as AddListeners } from "./AddListeners/EntryFile.js";
 
 const StartFunc = () => {
     let jVarLocalFromAdmin = true;
@@ -7,7 +8,9 @@ const StartFunc = () => {
     if (jVarLocalFromAdmin) {
         StartFuncFormLoad();
 
-        StartFuncShowOnDom().then();
+        StartFuncShowOnDom().then(() => {
+            AddListeners()
+        });
     };
 };
 
