@@ -13,6 +13,8 @@ const StartFunc = () => {
     $table.attr("data-detail-formatter", "detailFormatter");
     $table.attr("data-id-field", "pk");
     $table.attr("data-show-toggle", "true");
+    $table.attr("data-pagination", "true");
+
     //$table.attr("data-url", "/bin/StichingPOS/DataOnly");
 
 };

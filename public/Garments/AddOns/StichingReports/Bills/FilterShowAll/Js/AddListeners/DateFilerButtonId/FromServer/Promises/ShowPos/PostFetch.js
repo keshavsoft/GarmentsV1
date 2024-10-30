@@ -1,5 +1,5 @@
 let StartFunc = async () => {
-    let jVarLocalFetchUrl = `/bin/StichingPOS/DataOnly`;
+    let jVarLocalFetchUrl = `/binV4/StichingPOS/Show/DataOnly`;
 
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();

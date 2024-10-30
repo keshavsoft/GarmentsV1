@@ -1,10 +1,14 @@
 
-let StartFunc = async ({ inData }) => {
+let StartFunc = async ({ inData, inDeliveryHeadData }) => {
     let LocalData = inData[0];
+    let LocalDeliveryHead = await inDeliveryHeadData.json();
+    
     jFLocalToInputCnameId({ inValue: LocalData.CustomerName })
     jFLocalToInputCNumberId({ inValue: LocalData.CustomerNumber })
     jFLocalToInputOrderId({ inValue: LocalData.pk })
     jFLocalToInputBookingDate({ inValue: LocalData.DateTime})
+    jFLocalToInputBillNumber({ inValue: LocalDeliveryHead[0].pk})
+
 };
 
 let jFLocalToInputCnameId = ({inValue}) => {
@@ -43,5 +47,12 @@ let jFLocalToInputBookingDate = ({inValue}) => {
     jVarLocalBookingDate.innerHTML = date;
    };
 }
-
+let jFLocalToInputBillNumber = ({inValue}) => {
+    let jVarLocalHtmlId = 'BillNumberId';
+   let jVarLocalBookingDate = document.getElementById(jVarLocalHtmlId);
+   
+   if (jVarLocalBookingDate === null === false) {
+    jVarLocalBookingDate.innerHTML = inValue;
+   };
+}
 export { StartFunc }

@@ -4,7 +4,9 @@ let StartFunc = async ({ StichingPOS }) => {
     jFLocalToInputCustomerNameId({ inValue: jVarLocalData.CustomerName })
     jFLocalToInputCustomerNumberId({ inValue: jVarLocalData.CustomerNumber })
     jFLocalToInputOrderId({ inValue: jVarLocalData.pk })
-    jFLocalToInputBookingDate({inValue: jVarLocalData.DateTime})
+    jFLocalToInputBookingDate({ inValue: jVarLocalData.DateTime })
+    jFLocalToInputAdvanceAmt({ inValue: jVarLocalData?.AdvanceAmt ?? 0 })
+
 };
 
 let jFLocalToInputCustomerNameId = ({ inValue }) => {
@@ -16,34 +18,42 @@ let jFLocalToInputCustomerNameId = ({ inValue }) => {
     };
 };
 
-let jFLocalToInputCustomerNumberId = ({inValue}) => {
+let jFLocalToInputCustomerNumberId = ({ inValue }) => {
     let jVarLocalHtmlId = 'CNumberId';
-   let jVarLocalCustomerNumberId = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalCustomerNumberId === null === false) {
-      jVarLocalCustomerNumberId.innerHTML = inValue;
-   };
+    let jVarLocalCustomerNumberId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalCustomerNumberId === null === false) {
+        jVarLocalCustomerNumberId.innerHTML = inValue;
+    };
 };
 
-let jFLocalToInputOrderId = ({inValue}) => {
+let jFLocalToInputOrderId = ({ inValue }) => {
     let jVarLocalHtmlId = 'OrderId';
-   let jVarLocalOrderId = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalOrderId === null === false) {
-    jVarLocalOrderId.innerHTML = inValue;
-   };
+    let jVarLocalOrderId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalOrderId === null === false) {
+        jVarLocalOrderId.innerHTML = inValue;
+    };
 };
 
-let jFLocalToInputBookingDate = ({inValue}) => {
+let jFLocalToInputBookingDate = ({ inValue }) => {
     const date = new Date(inValue);
-    const dateOnly = date.toISOString().split('T')[0]; 
+    const dateOnly = date.toISOString().split('T')[0];
     console.log("date: ", dateOnly);
     let jVarLocalHtmlId = 'BookingDate';
-   let jVarLocalBookingDate = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalBookingDate === null === false) {
-    jVarLocalBookingDate.innerHTML = dateOnly;
-   };
+    let jVarLocalBookingDate = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalBookingDate === null === false) {
+        jVarLocalBookingDate.innerHTML = dateOnly;
+    };
+}
+let jFLocalToInputAdvanceAmt = ({ inValue }) => {
+    let jVarLocalHtmlId = 'AdvanceAmtId';
+    let jVarLocalBookingDate = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalBookingDate === null === false) {
+        jVarLocalBookingDate.innerHTML = inValue;
+    };
 }
 
 
