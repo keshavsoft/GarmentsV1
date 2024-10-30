@@ -24,7 +24,7 @@ const StartFunc = ({ InData }) => {
     });
 
     let jVarLocalGrossAmount = LocalInData.map(element => element.GAmount).reduce((a, b) => a + parseInt(b), 0);
-    let LocalAdvance = localStichingPOS?.Advance ?? 0;
+    let LocalAdvance = localStichingPOS?.AdvanceAmt ?? 0;
     let LocalBalanceAmount = jVarLocalGrossAmount - LocalAdvance;
 
     k1.innerHTML += `                       <span style="font-size: 16px; font-weight: ;">Net Amt            :  ${jVarLocalGrossAmount}</span>\n`;
