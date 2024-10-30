@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Reports</title>
+    <title>Maguva</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -42,7 +42,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="../Dashboard/Dashboard.html" class="logo d-flex align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center">
                 <img src="./assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block" id="BranchNameId">Maguva</span>
             </a>
@@ -286,62 +286,108 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../Dashboard/Dashboard.html">
-                    <i class="bi-house-door-fill"></i>
+                <a class="nav-link collapsed" href="../../../../Dashboard/Dashboard.html">
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Home</span>
                 </a>
             </li>
 
-            <!-- <li class="nav-item">
-                <a class="nav-link collapsed" href="./Masters/index.html">
-                    <i class="bi bi-bag-fill"></i></i>
-                    <span>Masters</span>
-                </a>
-            </li> -->
-
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/Garments/Scan/HtmlFiles/ScanShowAlterSSR.html">
-                    <i class="bi bi-bag-fill"></i></i>
-                    <span>Stock-Scan</span>
+                <a class="nav-link collapsed" href="../../index.html">
+                    <i class="bi bi-arrow-90deg-left"></i>
+                    <span>Parent</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="./Reports/index.html">
-                    <i class="bi bi-graph-up-arrow"></i></i>
-                    <span>Reports</span>
+
+
+
+            <!-- End Dashboard Nav -->
+
+
+           
+            <li class="nav-item  ">
+                <a class="nav-link  " href="#">
+                    <i class="bi bi-filter-circle"></i></i>
+                    <span>Delivery Bills</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="./NeedleCraftReports/index.html">
-                    <i class="bi bi-graph-up-arrow"></i></i>
-                    <span>NeedleCraft-Reports</span>
-                </a>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link collapsed" href="./SalesReturns/ShowAll/ShowAll.html">
-                    <i class="bi bi-arrow-repeat"></i></i>
-                    <span>SalesReturns</span>
-                </a>
-            </li> -->
-            <!-- <li class="nav-item">
-                <a class="nav-link collapsed" href="./Stiching/POS/ShowAll/ShowAll.html">
-                    <i class="bi bi-arrow-repeat"></i></i>
-                    <span>Stiching</span>
+            <!-- <li class="nav-item ">
+                <a class="nav-link collapsed" href="../Export/FilterShowAll.html">
+                    <i class="bi bi-filter-circle"></i></i>
+                    <span>Export</span>
                 </a>
             </li> -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="../../../Utility/src/backup">
-                    <i class="bi bi-arrow-down-circle"></i></i>
-                    <span>Download</span>
-                </a>
-            </li>
+
         </ul>
     </aside>
     <!-- End Sidebar-->
 
     <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Reports</h1>
+
+
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../Dashboard/Dashboard.html" id="BCHomeId">Home</a></li>
+                    <li class="breadcrumb-item active" id="RefreshBSTableId">Reports</li>
+                </ol>
+
+            </nav>
+            <div class="row">
+                <div class="col-4">
+                    <!-- <label class="col-md-4 col-form-label">startDate</label> -->
+                    <div class="col-md-8">
+                        <input kvs1="" id="startDateId" name="startDate" type="Date" data-dataattribute="Description"
+                            value="" data-clienteval="" type="Number" class="form-control" placeholder="Enter Pcs"
+                            autocomplete="off" required>
+                        <div class="invalid-feedback " id="PcsClass">
+                            Should not be Empty!!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <!-- <label class="col-md-4 col-form-label">endDate</label> -->
+                    <div class="col-md-8">
+                        <input kvs1="" id="endDateId" name="endDate" type="Date" data-dataattribute="Description"
+                            value="" data-clienteval="" type="Number" class="form-control" placeholder="Enter Pcs"
+                            autocomplete="off" required>
+                        <div class="invalid-feedback " id="PcsClass">
+                            Should not be Empty!!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="col-md-8">
+                        <button type="button" name="" id="DateFilerButtonId" class="btn btn-primary">Go</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <div class="spinner-border" id="SpinnerId" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+
+                            <table id="table">
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
     <!-- End #main -->
@@ -357,6 +403,100 @@
     <!-- Vendor JS Files -->
     <script>
 
+        function jFGlobalSerialColumn(value, row, index) {
+            // console.log(row);
+            return index + 1;
+        };
+
+        function JFDate(value, row, index) {
+            return new Date(row.Date).toLocaleDateString('en-GB')
+        };
+
+        function jFLocalSgstAmountTotal(data) {
+            var field = this.field
+            var total = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                } else {
+                    return +row[field];
+                };
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0);
+            return '₹' + total.toFixed(2);
+        }
+
+        function jFLocalUnitRateTotal(data) {
+            var field = this.field
+
+            var total = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                } else {
+                    return +row[field];
+                };
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0);
+            return '₹' + total.toFixed(2);
+
+        };
+
+        function jFLocalDisRateTotal(data) {
+            var field = this.field
+            var total = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                } else {
+                    return +row[field];
+                };
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0)
+            return '₹' + total.toFixed(2);
+
+        }
+        function jFLocalBasicAmtTotal(data) {
+            var field = this.field
+            var total = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                } else {
+                    return +row[field];
+                };
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0)
+            return '₹' + total.toFixed(2);
+
+        }
+        function jFCgstAmountTotal(data) {
+            var field = this.field
+            var total = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                } else {
+                    return +row[field];
+                };
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0);
+            return '₹' + total.toFixed(2);
+        }
+        function jFTotalAmountTotal(data) {
+            var field = this.field;
+            var total = data.map(function (row) {
+                if (row[field] === undefined) {
+                    return 0;
+                } else {
+                    return +row[field];
+                }
+            }).reduce(function (sum, i) {
+                return sum + i;
+            }, 0);
+
+            return '₹' + total.toFixed(2);
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -366,6 +506,8 @@
     <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
     <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
     <script
         src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
@@ -377,7 +519,7 @@
 
     <!-- Template Main JS File -->
     <script src="./assets/js/main.js"></script>
-    <script type="module" src="./Js/Create.js"></script>
+    <script type="module" src="./Js/StartFunc.js"></script>
 </body>
 
 </html>
