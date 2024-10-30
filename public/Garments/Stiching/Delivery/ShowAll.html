@@ -295,15 +295,12 @@
                 </a>
             </li>
 
+            <!-- End Dashboard Nav -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
-                    <i class="bi bi-arrow-90deg-left"></i>
-                    <span>Parent</span>
+                <a class="nav-link collapsed" href="#">
+                    <span>Needle Craft</span>
                 </a>
             </li>
-
-
-            <!-- End Dashboard Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../Voucher/Create.html">
@@ -311,52 +308,23 @@
                     <span>Create</span>
                 </a>
             </li>
-            <ul class="sidebar-nav" id="sidebar-nav">
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                        <i class="bi bi-journal-text"></i><span>Voucher</span><i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                    <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                        <li>
-                            <a href="../VoucherShow/ShowAll.html" class="">
-                                <i class="bi bi-circle"></i><span>All</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../DeliverMenu/DeliveredItems/ShowAll.html">
-                                <i class="bi bi-circle"></i><span>Delivered</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../VoucherPending/ShowAll.html" class="">
-                                <i class="bi bi-circle"></i><span>Pending</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-            </ul>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#Items-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-pencil-square"></i><span>Items</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" href="../VoucherShow/ShowAll.html">
+                    <i class="bi bi-journal-text"></i>
+                    <span>EST Bill</span>
                 </a>
-                <ul id="Items-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="../Items/All/All.html">
-                            <i class="bi bi-circle"></i><span> All</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Items/Delivered/Delivered.html">
-                            <i class="bi bi-circle"></i><span> Delivered</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Items/Pending/Pending.html">
-                            <i class="bi bi-circle"></i><span> Pending</span>
-                        </a>
-                    </li>
-                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../VoucherAll/ShowAll.html">
+                    <i class="bi bi-bar-chart"></i>
+                    <span>EST Status</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../Items/HtmlFiles/All.html">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Items Status</span>
+                </a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link " href="#">
@@ -366,13 +334,13 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../LastItemsCreate/Create.html">
-                    <i class="bi bi-database"></i></i>
+                    <i class="bi bi-plus-circle"></i>
                     <span>LastItemsCreate</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../DeliveryHead/DeliveredBills/ShowAll.html">
-                    <i class="bi bi-database"></i></i>
+                    <i class="bi bi-truck"></i>
                     <span>Delivery Bills</span>
                 </a>
             </li>
@@ -422,6 +390,12 @@
             <div class="row ">
                 <div class="col">
                     <label for="">Booking Date: </label>
+                    <label id="BookingDate"></label>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col">
+                    <label for="">Advance Amount: </label>
                     <label id="BookingDate"></label>
                 </div>
             </div>
@@ -487,7 +461,7 @@
                                         <th data-field="FK">Bill #</th>
 
                                         <th data-field="ProductName">ProductName</th>
-                                        <th data-field="GAmount">GAmount</th>
+                                        <th data-field="GAmount" data-footer-formatter="jFLocalColumnTotal">GAmount</th>
                                         <th data-field="DateTime">DateTime</th>
                                         <th data-field="Discount" data-formatter="inputFormatter">Discount</th>
                                         <th data-formatter="jFLocalDeleteColumn"></th>
@@ -543,6 +517,16 @@
             var field = this.field
             return '' + data.map(function (row) {
                 return +row.ItemDetails
+            }).reduce(function (sum, i) {
+                return sum + i
+            }, 0)
+        }
+
+        function jFLocalColumnTotal(data, i1, i2) {
+            let k1 = $(i1).parent();
+            var field = this.field
+            return '₹' + data.map(function (row) {
+                return +row[field]
             }).reduce(function (sum, i) {
                 return sum + i
             }, 0)
