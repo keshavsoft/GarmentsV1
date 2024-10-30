@@ -45,7 +45,7 @@ function jFLocalInsertItemCount(inData) {
             };
 
         });
-        return LocalArray;
+        return LocalArray.reverse();
     }).catch(error => {
         console.error('Error fetching data:', error);
     });

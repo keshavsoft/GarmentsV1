@@ -35,16 +35,16 @@ function jFLocalInsertItemCount(inData) {
             const filteredData1 = fetchData1.filter(fetchItem => fetchItem.FK === item.pk.toString());
             const filteredData2 = fetchData2.filter(fetchItem => fetchItem.FK === item.pk.toString());
 
-            // let jVarLocalDeliveredDate = JLocalDateFunc({ inDate: item.DateTime });
-            // let jVarLocalDate = JLocalDateFunc({ inDate: filteredData2.DateTime });
             item.ItemCount = filteredData1.length;
             item.DeleverCount = filteredData2.length;
             item.PendingCount = item.ItemCount - filteredData2.length;
             item.DateTime = JLocalDateFunc({ inDate: item.DateTime });
+            item.Date = new Date(item.Date).toLocaleDateString('en-GN');
 
             return item;
         });
-        return processedData;
+        
+        return processedData.reverse();
     }).catch(error => {
         console.error('Error fetching data:', error);
     });

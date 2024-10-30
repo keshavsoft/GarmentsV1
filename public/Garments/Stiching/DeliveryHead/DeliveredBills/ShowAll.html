@@ -6,9 +6,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <title>
-    Maghuva
-  </title>
+    <title>
+        Maghuva
+    </title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -371,19 +371,17 @@
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <table id="table">
+                            <table id="table" data-pagination="true">
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-field="id" data-formatter="jFGlobalSerialColumn">#</th>
-                                        <th data-field="FK">Bill #</th>
+                                        <th data-field="FK">EST #</th>
+                                        <th data-field="pk">Bill #</th>
                                         <th data-field="CustomerName">CustomerName</th>
                                         <th data-field="Date">Delivery Date</th>
                                         <th data-field="deliveryItemDescription">Description</th>
-                                        <!-- <th data-field="ItemCount">Items</th> -->
-                                        <!-- <th data-field="DeleverCount">Delivered</th> -->
-                                        <!-- <th data-field="PendingCount">pending</th> -->
                                         <th data-field="DateTime">DateTime</th>
-                                        <th data-formatter="ItemsPrint">Print</th>
+                                        <th data-formatter="ItemsPrint" data-field="Print">Print</th>
                                         <th data-formatter="deliveryFormatter">Show</th>
                                     </tr>
                                 </thead>

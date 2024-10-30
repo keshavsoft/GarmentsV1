@@ -1,7 +1,6 @@
 
 let StartFunc = async ({ inData }) => {
     let LocalData = inData[0];
-    console.log("local data: ",LocalData);
     jFLocalToInputCnameId({ inValue: LocalData.CustomerName })
     jFLocalToInputCNumberId({ inValue: LocalData.CustomerNumber })
     jFLocalToInputOrderId({ inValue: LocalData.pk })
@@ -36,14 +35,12 @@ let jFLocalToInputOrderId = ({inValue}) => {
 };
 
 let jFLocalToInputBookingDate = ({inValue}) => {
-    const date = new Date(inValue);
-    const dateOnly = date.toISOString().split('T')[0]; 
-    console.log("date: ", dateOnly);
+    const date = new Date(inValue).toLocaleDateString('en-GB')
     let jVarLocalHtmlId = 'BookingDate';
    let jVarLocalBookingDate = document.getElementById(jVarLocalHtmlId);
    
    if (jVarLocalBookingDate === null === false) {
-    jVarLocalBookingDate.innerHTML = dateOnly;
+    jVarLocalBookingDate.innerHTML = date;
    };
 }
 

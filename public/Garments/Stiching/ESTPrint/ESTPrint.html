@@ -40,18 +40,6 @@
 </head>
 
 <body>
-    <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <div class="card m-5" style="width: 100%; max-width: 600px;">
-            <div class="card-body" id="ModalBody">
-                <pre id="PrintDiv" style="margin-bottom: 16px;"></pre>
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" onclick="printJS('ModalBody', 'html')">Print</button>
-        </div>
-    </main>
-    
-    
-    
-
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -295,7 +283,126 @@
     </header>
     <!-- End Header -->
 
+    
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../../Dashboard/Dashboard.html">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../Voucher/Create.html">
+                    <i class="bi bi-database-add"></i></i>
+                    <span>Create</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../VoucherShow/ShowAll.html">
+                    <i class="bi bi-journal-text"></i>
+                    <span>EST Bill</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="#">
+                    <i class="bi bi-journal-text"></i>
+                    <span>EST Print</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../VoucherAll/ShowAll.html">
+                    <i class="bi bi-journal-text"></i>
+                    <span>EST Status</span>
+                </a>
+            </li>
+
+            <!-- <ul class="sidebar-nav" id="sidebar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-journal-text"></i><span>Voucher</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="forms-nav" class="nav-content  " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="#" class="active">
+                                <i class="bi bi-circle"></i><span>All</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../DeliverMenu/DeliveredItems/ShowAll.html">
+                                <i class="bi bi-circle"></i><span>Delivered</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../VoucherPending/ShowAll.html">
+                                <i class="bi bi-circle"></i><span>pending</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul> -->
+            <!-- <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Items-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-pencil-square"></i><span>Items</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Items-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../Items/All/All.html">
+                            <i class="bi bi-circle"></i><span> All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Items/Delivered/Delivered.html">
+                            <i class="bi bi-circle"></i><span> Delivered</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Items/Pending/Pending.html">
+                            <i class="bi bi-circle"></i><span> Pending</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../Items/HtmlFiles/All.html">
+                    <i class="bi bi-circle-fill"></i></i>
+                    <span>Items</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../LastItemsCreate/Create.html">
+                    <i class="bi bi-database"></i></i>
+                    <span>LastItemsCreate</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../DeliveryHead/DeliveredBills/ShowAll.html">
+                    <i class="bi bi-database"></i></i>
+                    <span>Delivery Bills</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <!-- End Sidebar-->
+
     <!-- End #main -->
+    <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="card m-5" style="width: 100%; max-width: 600px;">
+            <div class="card-body" id="ModalBody">
+                <pre id="PrintDiv" style="margin-bottom: 16px;"></pre>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" onclick="printJS('ModalBody', 'html')">Print</button>
+        </div>
+    </main>
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">

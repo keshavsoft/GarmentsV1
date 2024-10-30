@@ -1,8 +1,10 @@
 let StartFunc = () => {
     let jVarLocalReturnObject = {};
 
-    jVarLocalReturnObject.Advance = parseFloat(jFLocalAdvanceAmountId()) || 0;
+    jVarLocalReturnObject.AdvanceAmt = parseFloat(jFLocalAdvanceAmountId()) || 0;
     jVarLocalReturnObject.GAmount = parseInt(LocalFuncForjVarLocalNettAmountId()) || 0;
+    jVarLocalReturnObject.GAmount = jFLocalPaymentModeId;
+    jVarLocalReturnObject.BalanceAmt = jVarLocalReturnObject.GAmount - jVarLocalReturnObject.Advance;
 
     return jVarLocalReturnObject;
 };
@@ -12,14 +14,23 @@ let jFLocalAdvanceAmountId = () => {
     let jVarLocalHtmlId = document.getElementById(jVarLocalAdvanceAmountId);
 
     if (jVarLocalHtmlId === null === false) {
-    return jVarLocalHtmlId.value.trim();
+        return jVarLocalHtmlId.value.trim();
     };
 };
 let LocalFuncForjVarLocalNettAmountId = () => {
     let jVarLocalNettAmountId = document.getElementById('NettAmountId');
 
     if (jVarLocalNettAmountId === null === false) {
-    return jVarLocalNettAmountId.innerHTML;
+        return jVarLocalNettAmountId.innerHTML;
+    };
+};
+
+let jFLocalPaymentModeId = () => {
+    let jVarLocalPaymentModeId = 'PaymentModeId'
+    let jVarLocalHtmlId = document.getElementById(jVarLocalPaymentModeId);
+
+    if (jVarLocalHtmlId === null === false) {
+        return jVarLocalHtmlId.value.trim();
     };
 };
 
