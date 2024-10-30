@@ -1,9 +1,11 @@
 import { StartFunc as StartFuncGetFetch } from "./GetFetch.js";
+import { StartFunc as StartFuncGetFetchDeliveryHead } from "./GetFetchDeliveryHead.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
 
 let StartFunc = async () => {
   let jVarLocalFromFetch = await StartFuncGetFetch();
-  await StartFuncAfterFetch({ inFetchData: jVarLocalFromFetch });
+  let jVarLocalFromDeliveryHead = await StartFuncGetFetchDeliveryHead();
+  await StartFuncAfterFetch({ inFetchData: jVarLocalFromFetch, inDeliveryHeadData: jVarLocalFromDeliveryHead });
   jFLocalHideSpinner();
   var $table = $("#table");
   let LocalData = await jFLocalDataSameDate();
