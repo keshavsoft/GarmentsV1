@@ -3,7 +3,7 @@ import ConfigJson from '../../../../config.json' with {type: 'json'};
 let StartFunc = async () => {
     try {
         let jVarLocalStartUrl = ConfigJson.StartUrl;
-        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/BillsQrCode/Show/DataOnly`;
+        let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/pos/Show/DataOnly`;
 
         const response = await fetch(jVarLocalFetchUrl);
         const data = await response.json();

@@ -1,21 +1,7 @@
-import { FromNode } from "../PullData/FetchFuncs.js";
 import { StartFunc as TableRowStartFunc } from "../FetchFuncs/HtmlPull/TableRow.js";
 import { StartFunc as TableHeadStartFunc } from "../FetchFuncs/HtmlPull/TableHead.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    let jVarLocalData = await FromNode({
-        inFolderName,
-        inFileName,
-        inItemName,
-        inProjectName
-    });
-
-    if (jVarLocalData.KTF) {
-        await ShowOnDom({ inData: jVarLocalData.JsonData });
-    };
-};
-
-let ShowOnDom = async ({ inData }) => {
+let StartFunc = async ({ inData }) => {
     await ShowOnDomTableHeader();
     await ShowOnDomTableBody({ inData });
 };
