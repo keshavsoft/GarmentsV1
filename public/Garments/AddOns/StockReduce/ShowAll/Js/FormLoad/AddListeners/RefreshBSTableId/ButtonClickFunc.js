@@ -5,7 +5,7 @@ let StartFunc = async () => {
     jFLocalHideSpinner();
 
     let jVarLocalQrCodeData = await jFLocalPromiseAll();
-    jVarLocalQrCodeData = jVarLocalQrCodeData.filter(e => e.UserPK === 902);
+    jVarLocalQrCodeData = jVarLocalQrCodeData.filter(e => e.UserPK == 902);
     jVarLocalQrCodeData.reverse();
 
     var $table = $('#table');

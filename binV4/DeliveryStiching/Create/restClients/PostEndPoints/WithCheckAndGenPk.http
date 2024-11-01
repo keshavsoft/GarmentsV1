@@ -1,4 +1,4 @@
-POST http://localhost:7327/binV4/DeliveryStiching/Create
+POST http://localhost:7318/binV4/DeliveryStiching/Create
 Content-Type: application/json
 
 {"ProductName":"","UnitRate":0,"Discount":0,"GrossAmout":0,"FK":0,"Itempk":0}

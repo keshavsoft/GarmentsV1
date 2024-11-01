@@ -4,12 +4,10 @@ let StartFunc = async ({ inRowpk }) => {
     let LocalroutePath = ConfigJson.routePath;
     let LocalRowpk = inRowpk;
 
-
     let jVarLocalFetchUrl = `/${LocalroutePath}/Generate/RowShow/${LocalRowpk}`;
     let response = await fetch(jVarLocalFetchUrl);
-    let data = await response.json();
 
-    return await data;
+    return await response;
 };
 
 export { StartFunc };

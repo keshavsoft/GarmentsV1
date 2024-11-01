@@ -3,7 +3,7 @@ import Configjson from "../../Config.json" with {type: "json"};
 let StartFunc = async ({ inSettlementData }) => {
     let jVarLocalStichRef = getUrlQueryParams({ inGetKey: "StichRef" });
     let jVarLocalBodyData = inSettlementData;
-    let jVarLocalFetchUrl = `/${Configjson.routePath}/StichingPOS/Alter/${jVarLocalStichRef}`;
+    let jVarLocalFetchUrl = `/${Configjson.routePath}/StichingPOS/Alter/AsIs/${jVarLocalStichRef}`;
     let jVarLocalFetchHeaderObject = {
         method: "PUT",
         headers: {

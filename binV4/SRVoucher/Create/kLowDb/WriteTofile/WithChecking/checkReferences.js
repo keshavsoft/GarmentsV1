@@ -37,7 +37,7 @@ let LocalFuncTrue = ({ inKeysNeeded, inDataToInsert }) => {
             return LocalReturnData;
         };
     };
-    LocalReturnData.KTF = true;
+
     return LocalReturnData;
 };
 
