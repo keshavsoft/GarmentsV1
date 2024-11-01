@@ -6,18 +6,17 @@ let StartFunc = async () => {
     let jVarLocalBillsQrCodeData = await BillsQrCode();
     let jVarLocalPOSData = await POS();
     let jVarLocalData = await LocalDataMergeFunc({ inBillsQrCodeData: jVarLocalBillsQrCodeData, inPosData: jVarLocalPOSData });
-   console.log("jVarLocalData:",jVarLocalData);
-   
+
     await ShowInBody({ inData: jVarLocalData });
 };
 
 const LocalDataMergeFunc = async ({ inBillsQrCodeData, inPosData }) => {
     return inBillsQrCodeData.map(element => {
         let jVarLocalFindData = inPosData.find(e => e.pk == element.BillPk);
-        element.BillNumber = jVarLocalFindData?.BillNumber2425 ?? jVarLocalFindData?.BillNumber
-        return element
+        let BillNumber = jVarLocalFindData ? (jVarLocalFindData.BillNumber2425 ?? jVarLocalFindData.BillNumber) : element.BillNumber;
+        return { ...element, BillNumber };
     });
+};
 
-}
 
 export { StartFunc };
