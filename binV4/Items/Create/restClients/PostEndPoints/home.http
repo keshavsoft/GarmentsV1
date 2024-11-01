@@ -1,4 +1,4 @@
-POST http://localhost:7327/binV4/Items/Create
+POST http://localhost:7318/binV4/Items/Create
 Content-Type: application/json
 
 {"ItemName":"","GST":"","Factor":0}

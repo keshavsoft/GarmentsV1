@@ -1,4 +1,4 @@
-POST http://localhost:7327/binV4/Suppliers/Create/SendMail
+POST http://localhost:7318/binV4/Suppliers/Create/SendMail
 Content-Type: application/json
 
 {"SupplierName":"","AliasName":"","City":"","GST":"","Phone":0}

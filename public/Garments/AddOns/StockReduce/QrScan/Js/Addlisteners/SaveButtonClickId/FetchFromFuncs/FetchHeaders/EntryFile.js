@@ -1,6 +1,6 @@
 import KeysJson from './Keys.json' with {type: 'json'};
 
-let StartFunc = () => {
+let StartFunc = async () => {
     let jVarLocalForm = document.getElementById("FormId");
 
     KeysJson.body = JSON.stringify(jFLocalserializeFormData(jVarLocalForm));

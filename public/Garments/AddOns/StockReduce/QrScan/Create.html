@@ -353,14 +353,13 @@
                                     <form href="#" class="form-horizontal needs-validation" id="FormId">
                                         <div class="row">
 
-
                                             <div class="col-md-12">
                                                 <label class="col-md-2 col-form-label">Qr Scan</label>
 
                                                 <div class="col-md-10">
                                                     <input id="AccountNameId" name="ScanCode"
                                                         data-dataattribute="Description" value="" required
-                                                        class="form-control KeshavSoftHtmlAttributes" placeholder="Scan"
+                                                        class="form-control form-control-lg" placeholder="Scan"
                                                         autocomplete="off" autofocus>
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
@@ -372,7 +371,7 @@
                                                 <label class="col-md-4 col-form-label">QrCode</label>
 
                                                 <div class="col-md-8">
-                                                    <input name="pk" id="QrCode" class="form-control" readonly
+                                                    <input type="number" name="pk" id="QrCode" class="form-control" readonly
                                                         autocomplete="off">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
@@ -405,25 +404,13 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-md-12">
-                                                <label class="col-md-4 col-form-label">CostPrice</label>
-
-                                                <div class="col-md-8">
-                                                    <input name="CostPrice" id="CostPrice" class="form-control" readonly
-                                                        autocomplete="off">
-                                                    <div class="invalid-feedback">
-                                                        Should not be Empty!!
-                                                    </div>
-                                                </div>
-
-                                            </div>
 
                                             <div class="col-md-12 ">
                                                 <label class="col-md-4 col-form-label">BillNumber</label>
 
                                                 <div class="col-md-8">
                                                     <input name="BillNumber" id="BillNumber" class="form-control"
-                                                        readonly autocomplete="off">
+                                                        autocomplete="off" required>
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
                                                     </div>
@@ -435,7 +422,7 @@
 
                                                 <div class="col-md-8">
                                                     <input name="ExBillNumber" id="ExBillNumberId" class="form-control"
-                                                        readonly autocomplete="off">
+                                                        autocomplete="off">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
                                                     </div>
@@ -446,7 +433,7 @@
                                                 <label class="col-md-4 col-form-label">Barcode</label>
 
                                                 <div class="col-md-8">
-                                                    <input name="Barcode" id="BarcodeId" class="form-control" readonly
+                                                    <input name="Barcode" id="BarcodeId" class="form-control"
                                                         autocomplete="off">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
@@ -458,8 +445,8 @@
                                                 <label class="col-md-4 col-form-label">Date</label>
 
                                                 <div class="col-md-8">
-                                                    <input name="Date" id="DateId" class="form-control" readonly
-                                                        autocomplete="off">
+                                                    <input type="date" name="Date" id="DateId" class="form-control"
+                                                        autocomplete="off" required>
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
                                                     </div>
@@ -467,12 +454,11 @@
 
                                             </div>
 
-
                                             <div class="col-md-12">
                                                 <label class="col-md-4 col-form-label">ExDate</label>
 
                                                 <div class="col-md-8">
-                                                    <input name="ExDate" id="ExDateId" class="form-control" readonly
+                                                    <input type="date" name="ExDate" id="ExDateId" class="form-control"
                                                         autocomplete="off">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
@@ -484,7 +470,7 @@
                                                 <label class="col-md-4 col-form-label">SalePrice</label>
 
                                                 <div class="col-md-8">
-                                                    <input name="SalePrice" id="SalePrice" class="form-control" readonly
+                                                    <input type="number" name="SalePrice" id="SalePrice" class="form-control" readonly
                                                         autocomplete="off">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
@@ -494,81 +480,80 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <label class="col-md-4 col-form-label">Dis %</label>
-    
+
                                                 <div class="col-md-8">
-                                                    <input name="DisPercentage" id="DisPercentage" class="form-control"
-                                                        autocomplete="off" readonly>
+                                                    <input type="number" name="DisPercentage" id="DisPercentage" class="form-control"
+                                                        autocomplete="off">
                                                     <div class="invalid-feedback">
                                                         Should not be Empty!!
                                                     </div>
                                                 </div>
-    
-                                            </div>
-                                       
-                                       
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">DisRate</label>
 
-                                            <div class="col-md-8">
-                                                <input name="DisRate" id="DisRate" class="form-control"
-                                                    autocomplete="off" readonly>
-                                                <div class="invalid-feedback">
-                                                    Should not be Empty!!
-                                                </div>
                                             </div>
 
-                                        </div>
 
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">GrossAmount</label>
-
-                                            <div class="col-md-8">
-                                                <input name="GrossAmount" id="GrossAmountId" class="form-control"
-                                                    autocomplete="off" readonly>
-                                                <div class="invalid-feedback">
-                                                    Should not be Empty!!
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">Payment Mode</label>
-
-                                            <div class="col-md-8">
-                                                <input name="Type" id="TypeId" class="form-control"
-                                                    autocomplete="off" readonly>
-                                                <div class="invalid-feedback">
-                                                    Should not be Empty!!
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="col-md-4 col-form-label">UserPK</label>
-
-                                            <div class="col-md-8">
-                                                <input name="UserPK" id="UserPKId" value="902" class="form-control"
-                                                    autocomplete="off">
-                                                <div class="invalid-feedback">
-                                                    Should not be Empty!!
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12 m-3">
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">DisRate</label>
 
                                                 <div class="col-md-8">
-                                                    <button type="button" id="CreateSalesReturnsButtonId"
-                                                        class="btn btn-success">
-                                                        Save New
-                                                    </button>
-
+                                                    <input type="number" name="DisRate" id="DisRate" class="form-control"
+                                                        autocomplete="off">
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
                                                 </div>
 
                                             </div>
 
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">GrossAmount</label>
 
+                                                <div class="col-md-8">
+                                                    <input type="number" name="GrossAmout" id="GrossAmountId" class="form-control"
+                                                        autocomplete="off" required>
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
 
-                                        </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">Payment Mode</label>
+
+                                                <div class="col-md-8">
+                                                    <select name="type" id="TypeId" class="form-control " required>
+                                                        <option value="Cash Bill">Cash Bill</option>
+                                                        <option value="Card Bill">Card Bill</option>
+                                                        <option value="UPI Bill">UPI Bill</option>
+                                                        <option value="Credit Bill">Credit Bill</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label class="col-md-4 col-form-label">UserPK</label>
+
+                                                <div class="col-md-8">
+                                                    <input type="number" name="UserPK" id="UserPKId" value="902" class="form-control"
+                                                        autocomplete="off">
+                                                    <div class="invalid-feedback">
+                                                        Should not be Empty!!
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 m-3">
+
+                                                    <div class="col-md-8">
+                                                        <button type="button" id="CreateSalesReturnsButtonId"
+                                                            class="btn btn-success">
+                                                            Save New
+                                                        </button>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                     </form>
 
                                 </div>

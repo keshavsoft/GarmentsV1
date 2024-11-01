@@ -1,4 +1,4 @@
-POST http://localhost:7327/binV4/Generate/Create/SendMail
+POST http://localhost:7318/binV4/Generate/Create/SendMail
 Content-Type: application/json
 
 {"ProductName":"","CostPrice":0,"ProductAliasName":"","SalePrice":0,"PercentageValueAddition":0,"UserDescription":"","InventorySerial":"","PurchasePk":"","SupplierName":"","BillNumber":""}
