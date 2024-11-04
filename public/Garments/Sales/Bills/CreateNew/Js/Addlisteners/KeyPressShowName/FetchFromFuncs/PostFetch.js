@@ -5,7 +5,7 @@ let StartFunc = async () => {
     let LocaltableName = ConfigJson.tableName;
     let JvarLocalCustomerNumber = jFLocalCustomerNumber();
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/FilterData/CustomerName/${JvarLocalCustomerNumber}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/Show/Filter/CustomerName/${JvarLocalCustomerNumber}`;
     let response = await fetch(jVarLocalFetchUrl);
 
     return await response;
