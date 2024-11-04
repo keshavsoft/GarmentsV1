@@ -28,9 +28,9 @@ let jVarLocalButtonClickFunc = async () => {
 };
 
 let jFLocalClubSaleData = ({ inQrCodeData, inSaleData }) => {
-    let jVarLocalReturnData = inQrCodeData.map(element => {
-        let jVarLoopInsideFilter = inSaleData.find(LoopSales => LoopSales.pk === element.pk);
 
+    let jVarLocalReturnData = [inQrCodeData].map(element => {
+        let jVarLoopInsideFilter = [inSaleData].find(LoopSales => LoopSales.pk == element.pk);
         element.isSold = false;
 
         if (jVarLoopInsideFilter === undefined === false) {

@@ -9,8 +9,14 @@ let FromNode = async () => {
 
         // let jVarLocalFetchUrl = `/bin/BillsQrCode/FilterData/pk/${jVarLocalRowPK}`;
         let jVarLocalFetchUrl = `/${jVarLocalStartUrl}/BillsQrCode/RowShow/${jVarLocalRowPK}`;
-        
+
         const response = await fetch(jVarLocalFetchUrl);
+
+        if (response.status === 500) {
+            LocalReturnObject.JsonData = [];
+            LocalReturnObject.KTF = true;
+            return await LocalReturnObject;
+        };
         const data = await response.json();
 
         LocalReturnObject.JsonData = data;

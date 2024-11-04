@@ -14,6 +14,8 @@ let StartFunc = async () => {
 };
 
 let ShowOnDom = ({ inData }) => {
+    console.log('inData:',inData);
+    
     let jVarLocalItemNameId = document.getElementById("ItemNameLabelId");
     let jVarLocalBarcodeId = document.getElementById("BarcodeId");
     let jVarLocalProductAliasNameId = document.getElementById("ProductAliasNameId");
@@ -42,7 +44,7 @@ let ShowOnDom = ({ inData }) => {
     };
 
     if (jVarLocalPersentageId !== null) {
-        jVarLocalPersentageId.innerHTML = inData.Persentage;
+        jVarLocalPersentageId.innerHTML = inData.PercentageValueAddition;
     };
 
     if (jVarLocalUserDescription !== null) {

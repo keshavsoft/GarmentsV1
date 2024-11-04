@@ -9,9 +9,9 @@ let StartFunc = async () => {
     });
 
     if (jVarLocalData.KTF) {
-        if (jVarLocalData.JsonData.length > 0) {
-            ShowOnDom();
-        };
+        // if (jVarLocalData.JsonData.length > 0) {
+        ShowOnDom();
+        // };
     };
 };
 
