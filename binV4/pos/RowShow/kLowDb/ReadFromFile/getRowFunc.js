@@ -15,7 +15,7 @@ let StartFunc = ({ inId }) => {
   const db = LocalStartFuncPullData.inDb;
   db.read();
 
-  let LocalFindData = db.data.find(el => el.pk === LocalId);
+  let LocalFindData = db.data.find(el => el.pk == LocalId);
 
   if (LocalFindData === undefined) {
     LocalReturnData.KReason = `No Data by : ${LocalId}`;

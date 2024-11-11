@@ -13,12 +13,13 @@ let LocalFuncPullData = ({ inFileName }) => {
 };
 
 const StartFunc = ({ inFileName, inCheckWith, inKey }) => {
-    let LocalinFileName = inFileName;
+    let LocalinFileName = inFileName.tableName;
+
 
     let LocalDataNeeded = LocalFuncPullData({ inFileName: LocalinFileName });
 
     let LocalFindValue = LocalDataNeeded.filter(element => {
-        return element[inKey] === inCheckWith;
+        return element[inKey] == inCheckWith;
     });
 
     if (LocalFindValue.length === 0) {

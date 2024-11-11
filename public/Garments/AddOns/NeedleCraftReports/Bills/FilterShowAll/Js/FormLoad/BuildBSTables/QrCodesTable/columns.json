@@ -42,6 +42,11 @@
         "footerFormatter": "jFTotalAmountTotal",
         "halign": "left",
         "align": "right"
+    },
+    {
+        "field": "PaymentMode",
+        "title": "payment mode",
+         "filterControl": "select"
     }
     
 ]

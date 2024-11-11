@@ -16,13 +16,13 @@ let StartFunc = async ({ inFromDate, inToDate }) => {
         inHeadDeliveryStichingData: jVarLocalHeadDeliveryStichingData
     });
 
-    let jVarLocalDateFilter = jVarLocalWithBillData.filter(element => element === undefined === false).filter(element => {
-        return Date.parse(element.Date) >= Date.parse(inFromDate) && Date.parse(element.Date) <= Date.parse(inToDate)
-    });
+    // jVarLocalWithBillData = jVarLocalWithBillData.filter(element => element === undefined === false).filter(element => {
+    //     return Date.parse(element.Date) <= Date.parse(inFromDate) && Date.parse(element.Date) >= Date.parse(inToDate)
+    // });
 
     jFLocalHideSpinner();
 
-    return jVarLocalDateFilter;
+    return jVarLocalWithBillData;
 };
 
 const jFLocalMerge = ({ inPOSData, inDeleryData, inHeadDeliveryStichingData }) => {
@@ -46,6 +46,7 @@ const jFLocalMerge = ({ inPOSData, inDeleryData, inHeadDeliveryStichingData }) =
             pk: element?.pk,
             ESTBill: element?.FK,
             Date: element?.DateTime,
+            PaymentMode: element?.PaymentMode,
             CustomerName: LocalStichingPOSFindData?.CustomerName,
             CustomerNumber: LocalStichingPOSFindData?.CustomerNumber,
             GAmount: LocalGAmount,

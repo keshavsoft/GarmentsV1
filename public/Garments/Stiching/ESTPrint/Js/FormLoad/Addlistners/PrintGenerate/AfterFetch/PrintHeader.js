@@ -19,7 +19,7 @@ const StartFunc = ({ InData }) => {
     k1.innerHTML += `---------------------------------------------------\n`
     k1.innerHTML += `<span class="inner-pre" style="font-size: 16px;">Booking Date     : ${BookingDate}</span>\n`;
     k1.innerHTML += `<span class="inner-pre" style="font-size: 16px;">EST Delivery Date: ${DeliveryDate}</span>\n`;
-    k1.innerHTML += `<span class="inner-pre" style="font-size: 16px;">EST Delivery Date: ${GAmount}</span>\n`;
+    k1.innerHTML += `<span class="inner-pre" style="font-size: 16px;">PaymentMode      : ${LocalInData.PaymentMode}</span>\n`;
 
 
 };
