@@ -23,10 +23,17 @@ let jFLocalPromiseAll = async () => {
     return inBillsQrCodeData.map(element => {
         let jVarLocalFindData = inPosData.find(e => e.pk == element.BillPk);
         let BillNumber = jVarLocalFindData ? (jVarLocalFindData.BillNumber2425 ?? jVarLocalFindData.BillNumber) : element.BillNumber;
-        return { ...element, BillNumber };
-    });
+        let LocalDate = (jVarLocalFindData?.Date ?? element?.DateTime);
 
+        // Convert Date to the desired format and assign it back
+        LocalDate = new Date(LocalDate).toLocaleDateString('en-GB'); // dd/mm/yyyy format
+
+        return { ...element, BillNumber, Date: LocalDate };
+    });
 };
+
+export { jFLocalPromiseAll };
+
 let jFLocalHideSpinner = () => {
     let jVarLocalSpinnerId = document.getElementById("SpinnerId");
     jVarLocalSpinnerId.style.display = "none";

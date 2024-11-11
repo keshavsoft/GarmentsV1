@@ -9,7 +9,7 @@ const StartFunc = ({ InData }) => {
     k1.innerHTML += `---------------------------------------------\n`
     LocalInData.forEach((element, index) => {
         let LocalSerialNo = index + 1;
-        let jVarLoopInsideItem = `M-${element.pk}/${element.ProductName}`;
+        let jVarLoopInsideItem = `M-${element.QrCode}/${element.ProductName}`;
         let jVarLoopInsideRate = `${element.UnitRate}`;
         let jVarLoopInsideDisPercentage = `${element.DisPercentage}%-${element.DisRate}`;
         let jVarLoopInsideGrossAmout = `${element.GrossAmount}`;

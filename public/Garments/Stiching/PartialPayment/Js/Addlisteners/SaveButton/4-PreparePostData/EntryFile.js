@@ -3,8 +3,8 @@ let StartFunc = () => {
 
     jVarLocalReturnObject.AdvanceAmt = parseFloat(jFLocalAdvanceAmountId()) || 0;
     jVarLocalReturnObject.GAmount = parseInt(LocalFuncForjVarLocalNettAmountId()) || 0;
-    jVarLocalReturnObject.PaymentMode = jFLocalPaymentModeId;
     jVarLocalReturnObject.BalanceAmt = jVarLocalReturnObject.GAmount - jVarLocalReturnObject.Advance;
+    jVarLocalReturnObject.PaymentMode = jFLocalPaymentModeId();
 
     return jVarLocalReturnObject;
 };
@@ -30,7 +30,7 @@ let jFLocalPaymentModeId = () => {
     let jVarLocalHtmlId = document.getElementById(jVarLocalPaymentModeId);
 
     if (jVarLocalHtmlId === null === false) {
-        return jVarLocalHtmlId.value.trim();
+        return jVarLocalHtmlId.value;
     };
 };
 
