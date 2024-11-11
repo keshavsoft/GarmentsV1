@@ -3,7 +3,7 @@ let StartFunc = () => {
 
     jVarLocalReturnObject.AdvanceAmt = parseFloat(jFLocalAdvanceAmountId()) || 0;
     jVarLocalReturnObject.GAmount = parseInt(LocalFuncForjVarLocalNettAmountId()) || 0;
-    jVarLocalReturnObject.GAmount = jFLocalPaymentModeId;
+    jVarLocalReturnObject.PaymentMode = jFLocalPaymentModeId;
     jVarLocalReturnObject.BalanceAmt = jVarLocalReturnObject.GAmount - jVarLocalReturnObject.Advance;
 
     return jVarLocalReturnObject;
