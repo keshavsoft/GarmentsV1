@@ -3,8 +3,8 @@ POST http://localhost:7020/Login/bin/CreateToken/UsingJwt
 Content-Type: application/json
 
 {
-"UserName": "Maguva",
-"Password": "Maguva"
+"UserName": "",
+"Password": ""
 }
 
 
