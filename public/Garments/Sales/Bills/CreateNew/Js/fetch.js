@@ -6,7 +6,7 @@ const StartFunc = async () => {
     let jVarLocalBillNumber = document.getElementById(jVarLocalHtmlId);
 
     if (jVarLocalBillNumber === null === false) {
-        jVarLocalBillNumber.value = LocalBillNo + 1;
+        jVarLocalBillNumber.value = parseInt(LocalBillNo) + 1;
     };
 };
 
