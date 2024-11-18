@@ -401,10 +401,10 @@
                                 data-show-footer="true" data-show-columns="true" data-show-columns-toggle-all="true"
                                 data-click-to-select="true" data-filter-control="true" data-show-export="true"
                                 data-detail-formatter="detailFormatter" data-id-field="pk" data-show-toggle="true"
-                                data-url="/binV4/SalesReturns/Show/DataOnly" data-pagination="true">
+                                 data-pagination="true">
                                 <thead>
                                     <tr id="tableHeadRow">
-                                        <th data-field="id" data-formatter="jFGlobalSerialColumn">#</th>
+                                        <th data-field="id" data-formatter="jFGlobalSerialColumn">s.no</th>
 
                                         <th data-field="QrCode">QrCode</th>
                                         <th data-field="ProductName">ProductName</th>
@@ -414,8 +414,9 @@
                                         <th data-field="GrossAmount" data-footer-Formatter="priceFormatter">GrossAmount
                                         </th>
                                         <th data-formatter="jFDateColumn">Date</th>
-                                        <th data-field="SRRef">SalesRef</th>
-                                        <!-- <th data-field="UuId">UuId</th> -->
+                                        <th data-field="SRRef">pk</th>
+                                        <th data-field="BillNumber">BillNumber</th>
+                                        <th data-field="SalesReturnRef">SalesReturnRef</th>
                                     </tr>
                                 </thead>
                             </table>
