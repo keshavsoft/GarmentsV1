@@ -11,9 +11,9 @@ let StartFunc = async ({ inFromFetch, inRowData }) => {
         };
     });
     clearModalContent();
-    
+
     StartFuncPrintHeader({ InData: inRowData });
-    StartFuncPrintBody({ InData: jVarLocalFilterData });
+    StartFuncPrintBody({ InData: jVarLocalFilterData, inAdvanceAmt: inRowData?.AdvanceAmt });
     $('#showModalId').modal('show');
 };
 

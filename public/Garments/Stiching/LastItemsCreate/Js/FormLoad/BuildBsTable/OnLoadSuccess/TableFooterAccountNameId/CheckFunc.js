@@ -1,14 +1,19 @@
 let StartFunc = () => {
-
-    return true;
+    return StartCheckFunc();
 };
 
-let StartFunc_Old = () => {
-    let jVarLocalForm = document.getElementById("FormId");
+let StartCheckFunc = () => {
+    let jVarLocalForm = document.getElementById("ProductName");
+    if (jVarLocalForm.value === "") {
+        jVarLocalForm.classList.add("is-invalid");
+        jVarLocalForm.focus();
+        return false;
+    };
 
-    jVarLocalForm.classList.add('was-validated');
-
-    if (jVarLocalForm.checkValidity() === false) {
+    let jVarLocalFormGrossAmount = document.getElementById("GrossAmount");
+    if (jVarLocalFormGrossAmount.value === "") {
+        jVarLocalFormGrossAmount.classList.add("is-invalid");
+        jVarLocalFormGrossAmount.focus();
         return false;
     };
 

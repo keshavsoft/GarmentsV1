@@ -1,6 +1,6 @@
 const StartFunc = ({ inData, }) => {
     let jVarLocalData = inData;
-    console.log("data: ", jVarLocalData);
+    // console.log("data: ", jVarLocalData);
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.CustomerNumber });
 
