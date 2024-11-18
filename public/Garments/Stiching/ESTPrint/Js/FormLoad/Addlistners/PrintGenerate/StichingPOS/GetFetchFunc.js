@@ -1,19 +1,8 @@
-import { StartFunc as StartFuncAfterFetch } from "../AfterFetch/PrintHeader.js";
-
 const StartFunc = async () => {
     let jVarLocalStichRef = getUrlQueryParams({ inGetKey: "StichRef" });
     let jVarLocalFetchUrl = `/binV4/StichingPOS/RowShow/${jVarLocalStichRef}`;
     let response = await fetch(jVarLocalFetchUrl);
-
-    if (response.status === 200) {
-        let jVarLocalResponse = await response.json();
-        localStorage.setItem("StichingPOS", JSON.stringify(jVarLocalResponse));
-
-        StartFuncAfterFetch({ InData: jVarLocalResponse });
-    } else {
-        swal.fire({ icon: "error", title: "no data" })
-    };
-
+    return await response;
 };
 
 
