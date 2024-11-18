@@ -1,6 +1,7 @@
 const StartFunc = ({ inData, }) => {
     let jVarLocalData = inData;
-    let localAddOnAmount = jVarLocalData.map(e => e.AddOnAmount).reduce((a, b) => a + parseInt(b), 0);
+    let localAddOnAmount = jVarLocalData .map(e => parseInt(e.AddOnAmount) || 0) .reduce((a, b) => a + b, 0);
+    
     let localAmount = jVarLocalData.map(e => e.GrossAmount).reduce((a, b) => a + parseInt(b), 0);
     let localGAmount = jVarLocalData.map(e => e.GAmount).reduce((a, b) => a + parseInt(b), 0);
     AddOnAmountFunc({ inData: localAddOnAmount });

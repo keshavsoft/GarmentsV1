@@ -1,8 +1,8 @@
 import { StartFunc as StartFuncBSTableLoad } from "./BSTableLoad.js";
 import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 
-let StartFunc = async ({ StichingPOS, BillsStiching, DeliveryStiching }) => {
-    StartFuncShowOnDom({ StichingPOS })
+let StartFunc = async ({ StichingPOS, BillsStiching, HeadDelivery, DeliveryStiching }) => {
+    StartFuncShowOnDom({ StichingPOS, HeadDelivery })
     var $table = $('#table');
 
     if (BillsStiching.status === 200) {

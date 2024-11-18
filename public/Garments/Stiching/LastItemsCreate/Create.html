@@ -391,7 +391,7 @@
         </div><!-- End Large Modal-->
 
         <section class="section">
-           
+
             <div class="container">
                 <div class="row">
                     <div class="col-3">
@@ -422,7 +422,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <h6 style="display: inline;font-weight: bold;">Customer Number  </h6>
+                        <h6 style="display: inline;font-weight: bold;">Customer Number </h6>
                     </div>
                     <div class="col-1">:</div>
                     <div class="col-7">
@@ -432,7 +432,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="container">
                 <div class="row">
                     <div class="col-3">
@@ -476,7 +476,7 @@
                                             GAmount
                                         </th>
                                         <th>
-                                            DateTime
+                                            Qty
                                         </th>
                                     </tr>
                                     <tr>
@@ -505,7 +505,9 @@
                                                 name="AddOnAmount">
                                         </th>
                                         <th></th>
-                                        <th></th>
+                                        <th>
+                                            <input type="number" class="form-control" min="1" max="100" id="Qty" name="Qty">
+                                        </th>
                                         <th> <button class="btn btn-outline-success" type="button"
                                                 id="TableFooterSaveButtonId">Save</button></th>
                                     </tr>
@@ -521,7 +523,7 @@
                                         </th>
                                         <th data-field="GAmount" data-footer-formatter="jFLocalGAmountTotal"></th>
                                         <!-- <th data-field="FK"></th> -->
-                                        <th data-field="DateTime"></th>
+                                        <th data-formatter="jFDateColumn"></th>
                                     </tr>
 
                                 </thead>
@@ -530,7 +532,7 @@
                             </table>
                             <div class="text-center">
                                 <button type="button" class="btn btn-primary mt-3 " id="AdvancePaymentId">
-                                    <i class="bi bi-cash-coin"></i>  Advance payment
+                                    <i class="bi bi-cash-coin"></i> Advance payment
                                 </button>
                             </div>
                         </div>
@@ -554,6 +556,11 @@
     <script>
         function jFGlobalSerialColumn(value, row, index) {
             return index + 1;
+        };
+
+        function jFDateColumn(value, row, index) {
+
+            return new Date(row.DateTime).toLocaleDateString('en-GB'); // dd/mm/yyyy format
         };
 
         function operateFormatter(value, row, index) {

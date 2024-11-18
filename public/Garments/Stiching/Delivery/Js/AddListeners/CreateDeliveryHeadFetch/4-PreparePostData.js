@@ -7,7 +7,8 @@ let StartFunc = () => {
       return {
         FK: row.FK,
         deliveryItemDescription: jFLocalDescription(),
-        PaymentMode: jFLocalPaymentMode()
+        PaymentMode: jFLocalPaymentMode(),
+        AdvanceAmt: LocalFuncForAdvanceAmtId()
       };
     }
   );
@@ -31,6 +32,14 @@ let jFLocalPaymentMode = () => {
   if ((jVarLocalHtmlId === null) === false) {
     return jVarLocalHtmlId.value.trim();
   }
+};
+
+let LocalFuncForAdvanceAmtId = () => {
+  let jVarLocalAdvanceAmtId = document.getElementById('AdvanceAmtId');
+
+  if (jVarLocalAdvanceAmtId === null === false) {
+    return jVarLocalAdvanceAmtId.innerHTML;
+  };
 };
 
 

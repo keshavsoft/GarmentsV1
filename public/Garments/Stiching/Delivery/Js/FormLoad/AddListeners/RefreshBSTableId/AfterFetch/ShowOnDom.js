@@ -1,11 +1,16 @@
-let StartFunc = async ({ StichingPOS }) => {
+let StartFunc = async ({ StichingPOS, HeadDelivery }) => {
     let jVarLocalData = StichingPOS[0];
-    console.log(StichingPOS);
+    let StichingPOSAdvanceAmount = jVarLocalData?.AdvanceAmt ?? 0;
+    let localAdvanceAmount = HeadDelivery.map((el) => el.AdvanceAmt).reduce((a, b) => a + parseInt(b), 0);
+    console.log("localAdvanceAmount:",localAdvanceAmount);
+    
+    let jVarLocalAnvanceAmount = StichingPOSAdvanceAmount - localAdvanceAmount;
+    
     jFLocalToInputCustomerNameId({ inValue: jVarLocalData.CustomerName })
     jFLocalToInputCustomerNumberId({ inValue: jVarLocalData.CustomerNumber })
     jFLocalToInputOrderId({ inValue: jVarLocalData.pk })
     jFLocalToInputBookingDate({ inValue: jVarLocalData.DateTime })
-    jFLocalToInputAdvanceAmt({ inValue: jVarLocalData?.AdvanceAmt ?? 0 })
+    jFLocalToInputAdvanceAmt({ inValue: jVarLocalAnvanceAmount })
 
 };
 
