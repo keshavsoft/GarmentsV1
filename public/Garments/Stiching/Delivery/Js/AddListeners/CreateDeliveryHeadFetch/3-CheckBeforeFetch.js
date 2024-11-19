@@ -1,12 +1,12 @@
 let StartFunc = () => {
-    // if (jFLocalQtyId() === false) return false;
+    if (jFLocalDescription() === false) return false;
     // if (jFLocalRateId() === false) return false;
 
     return true;
 };
 
-let jFLocalQtyId = () => {
-    let jVarLocalId = document.getElementById("ItemNameId");
+let jFLocalDescription = () => {
+    let jVarLocalId = document.getElementById("Description");
     let jVarLocalHtmlValue = jVarLocalId.value;
 
     if (jVarLocalHtmlValue === "") {
