@@ -1,5 +1,6 @@
-const StartFunc = ({ InData, inAdvanceAmt }) => {
+const StartFunc = ({ InData }) => {
     let LocalInData = InData;
+    let localStichingPOS = JSON.parse(localStorage.getItem("StichingPOS"));
     let k1 = document.getElementById("PrintDiv");
 
     k1.innerHTML += `----------------------------------------------\n`
@@ -11,7 +12,7 @@ const StartFunc = ({ InData, inAdvanceAmt }) => {
         let LocalSerialNo = index + 1;
         let jVarLoopInsideItem = `${element.ProductName}`;
         let jVarLoopInsideGrossAmout = `${element.GrossAmount}`;
-        let jVarLoopInsideAddOnAmout = `${element.AddOnAmount ?? 0}`;
+        let jVarLoopInsideAddOnAmout = `${element.AddOnAmount}`;
         let jVarLoopInsideGAmout = `${element.GAmount}`;
         let jVarLoopInsideGST = `${element.GST}`;
 
@@ -26,7 +27,7 @@ const StartFunc = ({ InData, inAdvanceAmt }) => {
     });
 
     let jVarLocalGrossAmount = LocalInData.map(element => element.GAmount).reduce((a, b) => a + parseInt(b), 0);
-    let LocalAdvance = inAdvanceAmt ?? 0;
+    let LocalAdvance = localStichingPOS?.AdvanceAmt ?? 0;
     let LocalBalanceAmount = jVarLocalGrossAmount - LocalAdvance;
 
     k1.innerHTML += `               <span style="font-size: 16px; font-weight: ;">Net Amt            :  ${jVarLocalGrossAmount}</span>\n`;

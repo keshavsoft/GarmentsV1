@@ -1,7 +1,7 @@
 import { StartFunc as PrintGenerate } from "./PrintGenerate/EntryFile.js";
 
-const StartFunc = ({ inRowData }) => {
-    PrintGenerate({ inRowData });
+const StartFunc = () => {
+    PrintGenerate();
 };
 
 export { StartFunc };
