@@ -14,7 +14,7 @@ let StartFunc = async ({ inId }) => {
   const db = LocalStartFuncPullData.inDb;
   let LocalarrayOfObjects = db.data;
 
-  const LocalFindId = LocalarrayOfObjects.find((obj) => obj.UuId === LocalId);
+  const LocalFindId = LocalarrayOfObjects.find((obj) => obj.pk === LocalId);
 
   if (LocalFindId === undefined) {
     return await { KTF: false, KReason: `Id : ${LocalId} not found in data` };

@@ -1,4 +1,5 @@
-let StartFunc = () => {
+let StartFunc = ({ inVoucherRef }) => {
+  let LocalinVoucherRef = parseInt(inVoucherRef);
   var $table = $("#table");
   var JVarLocalArray = $.map(
     $table.bootstrapTable("getSelections"),
@@ -18,7 +19,8 @@ let StartFunc = () => {
         Itempk: row.pk,
         delivery: row.delivery,
         deliveryItemDisAmount: jVarLocalDiscountValue,
-        deliveryItemDescription: jFLocalDescription()
+        deliveryItemDescription: jFLocalDescription(),
+        VoucherRef: LocalinVoucherRef
       };
     }
   );

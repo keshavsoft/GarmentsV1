@@ -1,6 +1,6 @@
 let StartFunc = async (row, $element, field) => {
     console.log(field);
-    if (field === 5) {
+    if (field === "Delete") {
         let jVarLocalFromSwal = await Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -25,7 +25,7 @@ let jFLocalClickRowForDelete = async (inRow) => {
     let LocalRowPk = inRow.pk;
     console.log(inRow);
 
-    let jVarLocalFetchUrl = `/bin/BillsStiching/${LocalRowPk}`;
+    let jVarLocalFetchUrl = `/binV4/BillsStiching/Delete/${LocalRowPk}`;
     let LocalBodyData = {
         method: "DELETE"
     };

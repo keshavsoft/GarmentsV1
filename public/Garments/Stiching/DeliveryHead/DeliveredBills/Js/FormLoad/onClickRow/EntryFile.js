@@ -5,6 +5,7 @@ const StartFunc = (row, $element, field) => {
         let NewURl = new URL("../../DeliveryPrint/DeliveryPrint.html", url);
         const new_url = new URL(`${NewURl.href}?${params1}`);
         new_url.searchParams.append('StichRef', row.FK);
+        new_url.searchParams.append('VoucherRef', row.pk);
 
         window.location.href = new_url.href;
     };

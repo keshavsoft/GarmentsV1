@@ -7,14 +7,16 @@ import { StartFunc as StartFuncDeliveryHead } from "../CreateDeliveryHeadFetch/2
 let StartFunc = async () => {
   if (StartFuncCheckBeforeFetch()) {
     let jVarLocalBodyData = await StartFuncDeliveryHead();
+    let JVarLocalVoucherref = await jVarLocalBodyData.text();
+
     if (jVarLocalBodyData.status === 200) {
-      let jVarLocalBodyData = StartFuncPreparePostData();
+      let jVarLocalBodyData = StartFuncPreparePostData({ inVoucherRef: JVarLocalVoucherref });
 
       let response = await StartFuncFetchFunc({
         inBodyData: jVarLocalBodyData,
       });
 
-      await StartFuncAfterFetch({ inFromFetch: response });
+      await StartFuncAfterFetch({ inFromFetch: response, inVoucherRef: JVarLocalVoucherref });
     }
   }
 };
