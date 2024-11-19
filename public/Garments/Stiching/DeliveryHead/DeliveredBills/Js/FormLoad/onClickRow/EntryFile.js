@@ -1,8 +1,12 @@
-import { StartFunc as Addlistners } from "./Addlistners/EntryFile.js";
-
 const StartFunc = (row, $element, field) => {
     if (field === "Print") {
-        Addlistners({ inRowData: row });
+        const url = new URL(window.location.href);
+        const params1 = new URLSearchParams(url.search);
+        let NewURl = new URL("../../DeliveryPrint/DeliveryPrint.html", url);
+        const new_url = new URL(`${NewURl.href}?${params1}`);
+        new_url.searchParams.append('StichRef', row.FK);
+
+        window.location.href = new_url.href;
     };
 };
 export { StartFunc };

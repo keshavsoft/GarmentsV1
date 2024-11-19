@@ -2,14 +2,11 @@ import { StartFunc as StartFuncPrintHeader } from "./PrintHeader.js";
 import { StartFunc as StartFuncPrintBody } from "./PrintBody.js";
 import { startFunc as Footer } from "./Footer.js";
 
-let StartFunc = async ({ inFromFetch, inRowData, inFooterData }) => {
-
-    let jVarLocalFilterData = inFromFetch
+let StartFunc = async ({ inBody, inHeaData, inFooterData }) => {
     clearModalContent();
-    StartFuncPrintHeader({ InData: inRowData });
-    StartFuncPrintBody({ InData: jVarLocalFilterData, inAdvanceAmt: inRowData?.AdvanceAmt });
+    StartFuncPrintHeader({ InData: inHeaData });
+    StartFuncPrintBody({ InData: inBody, inAdvanceAmt: inHeaData?.AdvanceAmt });
     Footer({ InData: inFooterData })
-    $('#showModalId').modal('show');
 };
 
 

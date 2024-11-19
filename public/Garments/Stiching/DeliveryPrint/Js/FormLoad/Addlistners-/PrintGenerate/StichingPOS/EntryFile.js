@@ -1,7 +1,7 @@
 import { StartFunc as GetFetchFunc } from "./GetFetchFunc.js";
 
-const StartFunc = async ({ inRowData }) => {
-    let response = await GetFetchFunc({ inRowData });
+const StartFunc = async () => {
+    let response = await GetFetchFunc();
 
     if (response.status === 200) {
         return await response.json();

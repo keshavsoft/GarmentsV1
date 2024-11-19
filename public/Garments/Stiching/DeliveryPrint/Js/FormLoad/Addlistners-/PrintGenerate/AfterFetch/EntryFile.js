@@ -4,7 +4,7 @@ import { startFunc as Footer } from "./Footer.js";
 
 let StartFunc = async ({ inHeadData, inBodyData, inFooterData }) => {
     await PrintHeader({ InData: inHeadData })
-    PrintBody({ InData: inBodyData, inAdvanceAmt: inHeadData.AdvanceAmt });
+    PrintBody({ InData: inBodyData });
     Footer({ InData: inFooterData });
 
 };
