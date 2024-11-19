@@ -1,6 +1,5 @@
 let StartFunc = async ({ inBodyData }) => {
     let jVarLocalBodyData = inBodyData;
-    console.log("jVarLocalBodyData::",jVarLocalBodyData);
     let jVarLocalFetchUrl = `/binV4/HeadDeliveryStiching/Create`;
 
     let jVarLocalFetchHeaderObject = {
@@ -13,7 +12,6 @@ let StartFunc = async ({ inBodyData }) => {
     };
 
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaderObject);
-    console.log("response::",response);
     return response;
 };
 

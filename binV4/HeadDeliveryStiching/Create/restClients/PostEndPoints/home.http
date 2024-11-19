@@ -1,4 +1,9 @@
-POST http://localhost:7318/binV4/HeadDeliveryStiching/Create
+POST http://localhost:7020/binV4/HeadDeliveryStiching/Create
 Content-Type: application/json
 
-{"Description":"","FK":0}
+{
+    "FK": "2",
+    "deliveryItemDescription": "dd",
+    "PaymentMode": "UPI Bill",
+    "AdvanceAmt": "0"
+}

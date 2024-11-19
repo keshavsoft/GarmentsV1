@@ -15,13 +15,19 @@ let StartFunc = async () => {
     let LocalHeadData = jFHeadMerge({ inHeadDeliveryStiching: LocalHeadDeliveryStiching, inStichingPOS: LocalStichingPOS });
     let LocalMergeData = await mergeDataFunc({ inBillsStiching: LocalDeliveryStiching, inMasterItems: jVarLocalMasterItems });
     let LocalFooterGSTData = grouoBy(LocalMergeData);
-    StartFuncAfterFetch({ inBody: LocalMergeData, inHeaData: LocalHeadData[0], inFooterData: LocalFooterGSTData })
+    StartFuncAfterFetch({ inBody: LocalMergeData, inHeaData: LocalHeadData, inFooterData: LocalFooterGSTData })
 
 };
 
 const mergeDataFunc = ({ inBillsStiching, inMasterItems }) => inBillsStiching.map(element => ({ ...element, GST: (inMasterItems.find(item => item.ItemName === element.ProductName)?.GST || "5") }));
-const jFHeadMerge = ({ inHeadDeliveryStiching, inStichingPOS }) => {
+const jFHeadMerge1 = ({ inHeadDeliveryStiching, inStichingPOS }) => {
     return inHeadDeliveryStiching.map(element => {
+        console.log("element:", element, inStichingPOS);
+
+        if (element.pk == inStichingPOS.pk) {
+
+        }
+
         element.CustomerName = inStichingPOS.CustomerName;
         element.CustomerNumber = inStichingPOS.CustomerNumber;
         element.DeliveryDate = new Date(inStichingPOS?.Date).toLocaleDateString('en-GB'); // dd/mm/yyyy format
@@ -30,6 +36,20 @@ const jFHeadMerge = ({ inHeadDeliveryStiching, inStichingPOS }) => {
         return element;
 
     });
+
+
+}
+const jFHeadMerge = ({ inHeadDeliveryStiching, inStichingPOS }) => {
+    return {
+        ...inHeadDeliveryStiching,
+
+        "CustomerName": inStichingPOS.CustomerName,
+        "CustomerNumber": inStichingPOS.CustomerNumber,
+        "DeliveryDate": new Date(inStichingPOS?.Date).toLocaleDateString('en-GB'),
+        "BookingDate": new Date(inStichingPOS?.DateTime).toLocaleDateString('en-GB'),
+        "Date": new Date(inHeadDeliveryStiching.DateTime).toLocaleDateString('en-GB')
+
+    }
 
 
 }

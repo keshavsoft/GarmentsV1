@@ -2,7 +2,10 @@ import { StartFunc as StartFuncBSTableLoad } from "./BSTableLoad.js";
 import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
 
 let StartFunc = async ({ StichingPOS, BillsStiching, DeliveryStiching }) => {
-    let jVarLocalDeliveryItemsGAmount = DeliveryStiching.map(el => el.GAmount).reduce((a, b) => a + parseInt(b), 0)
+
+    let a1 = DeliveryStiching.map(el => el.GAmount).reduce((a, b) => a + parseInt(b), 0);
+    let a2 = DeliveryStiching .map(el => parseInt(el.deliveryItemDisAmount) || 0) .reduce((a, b) => a + b, 0);
+    let jVarLocalDeliveryItemsGAmount = a1 - a2;
     StartFuncShowOnDom({ StichingPOS, inDeliveryItemsGAmount: jVarLocalDeliveryItemsGAmount })
     var $table = $('#table');
 
