@@ -1,8 +1,8 @@
-import { StartFunc as StartFuncButtonClickFunc } from "./QRGenerate/2-ButtonClickFunc.js";
+import { StartFunc as Addlistners } from "./Addlistners/EntryFile.js";
 
 const StartFunc = (row, $element, field) => {
     if (field === "Print") {
-        StartFuncButtonClickFunc({ inRowData: row });
+        Addlistners({ inRowData: row });
     };
 };
 export { StartFunc };

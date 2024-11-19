@@ -1,16 +1,16 @@
-import { StartFunc as StartFuncOnClickRowFunc } from "../onClickRow/EntryFile.js";
+import { StartFunc as pos } from "./pos/EntryFile.js";
+import { StartFunc as SRVoucher } from "./SRVoucher/EntryFile.js";
+import { StartFunc as AfterFetch } from "./AfterFetch/EntryFile.js";
 
-let StartFunc = () => {
-    jFLocalHideSpinner();
-    var $table = $('#table');
-    $table.bootstrapTable({
-        onClickRow: StartFuncOnClickRowFunc
-    });
+let StartFunc = async () => {
+
+    let [LocalPos, LocalSRVoucher] = await Promise.all([pos(), SRVoucher()]);
+    let localBillsData = jFbillNumberFunc({ inSRVoucher: LocalSRVoucher, inPos: LocalPos });
+console.log("localBillsData:",localBillsData);
+
+    AfterFetch({ inData: localBillsData })
 };
 
-let jFLocalHideSpinner = () => {
-    let jVarLocalSpinnerId = document.getElementById("SpinnerId");
-    jVarLocalSpinnerId.style.display = "none";
-};
+const jFbillNumberFunc = ({ inSRVoucher, inPos }) => inSRVoucher.map(element => ({ ...element, BillNumber: inPos.find(ele => ele.pk == element.pk)?.BillNumber2425 || inPos.find(ele => ele.pk == element.pk)?.BillNumber }));
 
 export { StartFunc }

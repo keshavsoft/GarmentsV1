@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncFetchFunc } from "./5-FetchFunc.js";
+import { StartFunc as StartFuncFetchFunc } from "./GetFetchFunc.js";
 
 let StartFunc = async () => {
     let response = await StartFuncFetchFunc();
