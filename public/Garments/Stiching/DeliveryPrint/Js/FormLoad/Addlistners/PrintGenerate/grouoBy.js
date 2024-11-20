@@ -1,6 +1,8 @@
 const StartFunc = (inData) => {
     return Object.entries(groupBy(inData, person => person.GST)).map(([key, value]) => {
-        const sum = value.reduce((total, elem) => total + Number(elem.GrossAmount || 0), 0);
+        const GrossAmount = value.reduce((total, elem) => total + Number(elem.GrossAmount || 0), 0);
+        const deliveryItemDisAmount = value.reduce((total, elem) => total + Number(elem.deliveryItemDisAmount || 0), 0);
+        const sum = GrossAmount - deliveryItemDisAmount;
         const gst = parseInt(key);
         const taxableValue = sum / (1 + gst / 100);
         const gstAmount = (sum - taxableValue).toFixed(2);

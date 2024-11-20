@@ -10,7 +10,7 @@ let StartFunc = async () => {
     let JVarLocalVoucherref = await jVarLocalBodyData.text();
 
     if (jVarLocalBodyData.status === 200) {
-      let jVarLocalBodyData = StartFuncPreparePostData({ inVoucherRef: JVarLocalVoucherref });
+      let jVarLocalBodyData = await StartFuncPreparePostData({ inVoucherRef: JVarLocalVoucherref });
 
       let response = await StartFuncFetchFunc({
         inBodyData: jVarLocalBodyData,

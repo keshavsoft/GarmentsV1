@@ -303,46 +303,46 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../Voucher/Create.html">
-                    <i class="bi bi-file-earmark-plus"></i> 
+                    <i class="bi bi-file-earmark-plus"></i>
                     <span>Create</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="bi bi-receipt"></i> 
+                    <i class="bi bi-receipt"></i>
                     <span>EST Bill</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../VoucherAll/ShowAll.html">
-                    <i class="bi bi-journal-check"></i> 
+                    <i class="bi bi-journal-check"></i>
                     <span>EST Status</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../Items/HtmlFiles/All.html">
-                    <i class="bi bi-clipboard-data"></i> 
+                    <i class="bi bi-clipboard-data"></i>
                     <span>Items Status</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../LastItemsCreate/Create.html">
-                    <i class="bi bi-box-seam"></i> 
+                    <i class="bi bi-box-seam"></i>
                     <span>Last Items Create</span>
                 </a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../DeliveryHead/DeliveredBills/ShowAll.html">
-                    <i class="bi bi-truck"></i> 
+                    <i class="bi bi-truck"></i>
                     <span>Delivery Bills</span>
                 </a>
             </li>
-            
+
         </ul>
     </aside>
     <!-- End Sidebar-->
@@ -371,20 +371,23 @@
                             <div class="spinner-border" id="SpinnerId" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <table id="table">
+                            <table id="table" data-filter-control="true">
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-field="id" data-formatter="jFGlobalSerialColumn">#</th>
                                         <th data-field="pk" data-filter-control="input">EST #</th>
                                         <th data-field="CustomerName">C Name</th>
-                                        <th data-field="GAmount">GAmount</th>
-                                        <th data-field="AdvanceAmt">Advc</th>
+                                        <th data-field="GAmount" data-footer-formatter="priceFormatter">GAmount</th>
+                                        <th data-field="AdvanceAmt" data-footer-formatter="priceFormatter">Advc</th>
                                         <th data-formatter="jFGlobalDateTime">EST Dt</th>
                                         <!-- <th data-field="Description">Des</th> -->
                                         <th data-formatter="jFGlobalDeliveryDate">Delivery Date</th>
-                                        <th data-formatter="ItemCount">Items</th>
-                                        <th data-formatter="DeleverCount">Delivered</th>
-                                        <th data-formatter="PendingCount">pending</th>
+                                        <th data-field="ItemCount" data-formatter="ItemCount"
+                                            data-footer-formatter="priceFormatter">Items</th>
+                                        <th data-field="DeleverCount" data-formatter="DeleverCount"
+                                            data-footer-formatter="priceFormatter">Delivered</th>
+                                        <th data-field="PendingCount" data-formatter="PendingCount"
+                                            data-footer-formatter="priceFormatter">pending</th>
                                         <th data-formatter="ItemsPrint">Print</th>
                                         <th data-formatter="deliveryFormatter">Delivery</th>
                                     </tr>
@@ -506,13 +509,16 @@
         };
 
         function priceFormatter(data) {
-            var field = this.field
-            return '' + data.map(function (row) {
-                return +row.ItemDetails
-            }).reduce(function (sum, i) {
-                return sum + i
-            }, 0)
-        }
+            var field = this.field;
+            return '' + data
+                .map(function (row) {
+                    return parseFloat(row[field]) || 0; // Use parseFloat and default to 0 if the value is not a number
+                })
+                .reduce(function (sum, i) {
+                    return sum + i;
+                }, 0);
+        };
+
     </script>
 
     <script>
