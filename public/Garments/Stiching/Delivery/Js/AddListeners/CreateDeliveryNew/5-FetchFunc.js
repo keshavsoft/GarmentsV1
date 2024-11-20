@@ -1,7 +1,8 @@
+import ConfigJson from '../../Config.json' with {type: 'json'};
+
 let StartFunc = async ({ inBodyData }) => {
     let jVarLocalBodyData = inBodyData;
-    console.log("jVarLocalBodyData::",jVarLocalBodyData);
-    let jVarLocalFetchUrl = `/binV4/DeliveryStiching/Bulk/MultiInsertWithCheck`;
+    let jVarLocalFetchUrl = `/${ConfigJson.routePath}/DeliveryStiching/Bulk/MultiInsertWithCheck`;
 
     let jVarLocalFetchHeaderObject = {
         method: "POST",
@@ -13,7 +14,6 @@ let StartFunc = async ({ inBodyData }) => {
     };
 
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaderObject);
-    console.log("response::",response);
     return response;
 };
 

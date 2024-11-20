@@ -1,4 +1,4 @@
-let StartFunc = ({ inVoucherRef }) => {
+let StartFunc =async ({ inVoucherRef }) => {
   let LocalinVoucherRef = parseInt(inVoucherRef);
   var $table = $("#table");
   var JVarLocalArray = $.map(
@@ -24,7 +24,7 @@ let StartFunc = ({ inVoucherRef }) => {
       };
     }
   );
-  return JVarLocalArray;
+  return await JVarLocalArray;
 };
 
 

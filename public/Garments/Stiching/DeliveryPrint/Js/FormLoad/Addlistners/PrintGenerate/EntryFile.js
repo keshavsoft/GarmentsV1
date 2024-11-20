@@ -20,25 +20,7 @@ let StartFunc = async () => {
 };
 
 const mergeDataFunc = ({ inBillsStiching, inMasterItems }) => inBillsStiching.map(element => ({ ...element, GST: (inMasterItems.find(item => item.ItemName === element.ProductName)?.GST || "5") }));
-const jFHeadMerge1 = ({ inHeadDeliveryStiching, inStichingPOS }) => {
-    return inHeadDeliveryStiching.map(element => {
-        console.log("element:", element, inStichingPOS);
 
-        if (element.pk == inStichingPOS.pk) {
-
-        }
-
-        element.CustomerName = inStichingPOS.CustomerName;
-        element.CustomerNumber = inStichingPOS.CustomerNumber;
-        element.DeliveryDate = new Date(inStichingPOS?.Date).toLocaleDateString('en-GB'); // dd/mm/yyyy format
-        element.BookingDate = new Date(inStichingPOS?.DateTime).toLocaleDateString('en-GB'); // dd/mm/yyyy format
-        element.Date = new Date(element?.DateTime).toLocaleDateString('en-GB'); // dd/mm/yyyy format
-        return element;
-
-    });
-
-
-}
 const jFHeadMerge = ({ inHeadDeliveryStiching, inStichingPOS }) => {
     return {
         ...inHeadDeliveryStiching,

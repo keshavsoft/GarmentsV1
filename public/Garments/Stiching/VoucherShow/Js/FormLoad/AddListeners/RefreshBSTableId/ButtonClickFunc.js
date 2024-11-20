@@ -41,8 +41,9 @@ function jFLocalInsertItemCount(inData) {
 
             return item;
         });
+        const filteredData = processedData.filter(item => item.PendingCount !== 0);
 
-        return processedData.reverse();
+        return filteredData.reverse();
     }).catch(error => {
         console.error('Error fetching data:', error);
     });
