@@ -36,7 +36,7 @@ let deleteObjectById = ({ inCollection, inId }) => {
   let LocalId = inId;
 
   LocalCollection.splice(
-    LocalCollection.findIndex((a) => a.UuId === LocalId),
+    LocalCollection.findIndex((a) => a.pk === LocalId),
     1
   );
 

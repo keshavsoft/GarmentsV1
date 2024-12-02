@@ -1,5 +1,6 @@
 let StartFunc = ({ InData }) => {
-    let JVarLocal = InData.pk;
+    let JVarLocal = InData;
+    
     const url = new URL(window.location.href);
     const params1 = new URLSearchParams(url.search);
     let NewURl = new URL("../LastItemsCreate/Create.html", url);

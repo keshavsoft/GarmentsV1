@@ -1,0 +1,52 @@
+{
+    "toolbar": "#toolbar",
+    "search": "true",
+    "searchable": "true",
+    "idfield": "pk",
+    "showFooter": "true",
+    "pagination": "true",
+    "data": [],
+    "url": "",
+    "onClickRow": "",
+    "columns": [
+        {
+            "field": "id",
+            "title": "#",
+            "formatter": "jFGlobalSerialColumn"
+        },
+        {
+            "field": "ProductName",
+            "title": "ProductName",
+            "footerFormatter": "jFLocalItemCount"
+        },
+        {
+            "field": "GrossAmount",
+            "title": "Amount",
+            "footerFormatter": "jFLocalColumnTotal"
+        },
+        {
+            "field": "ItemDescription",
+            "title": "Description"
+        },
+        {
+            "title": "Add-On",
+            "field": "AddOnAmount",
+            "footerFormatter": "jFLocalAddonAmountTotal"
+        },
+        {
+            "title": "GAmount",
+            "field": "GAmount",
+            "footerFormatter": "jFLocalGAmountTotal"
+        },
+        {
+            "title": "Qty",
+            "field": "DateTime",
+            "formatter": "jFDateColumn"
+        },
+        {
+            "title": "action",
+            "field": "Delete",
+            "formatter": "DeleteFunc"
+        }
+    ]
+}
