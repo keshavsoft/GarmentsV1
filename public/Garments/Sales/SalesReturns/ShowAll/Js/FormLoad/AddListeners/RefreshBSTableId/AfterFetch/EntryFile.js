@@ -1,4 +1,5 @@
 let StartFunc = ({ inData }) => {
+    inData.reverse()
     jFLocalHideSpinner();
     var $table = $('#table');
     $table.bootstrapTable({ data: inData });
