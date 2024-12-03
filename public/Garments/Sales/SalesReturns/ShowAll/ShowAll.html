@@ -405,18 +405,15 @@
                                 <thead>
                                     <tr id="tableHeadRow">
                                         <th data-field="id" data-formatter="jFGlobalSerialColumn">s.no</th>
-
-                                        <th data-field="QrCode">QrCode</th>
+                                        <th data-field="QrCode" data-filter-control="input">QrCode</th>
                                         <th data-field="ProductName">ProductName</th>
-                                        <!-- <th data-field="CostPrice">CostPrice</th> -->
-                                        <!-- <th data-field="PurchasePk">PurchasePk</th> -->
                                         <th data-field="SalePrice" data-footer-Formatter="priceFormatter">SalePrice</th>
                                         <th data-field="GrossAmount" data-footer-Formatter="priceFormatter">GrossAmount
                                         </th>
                                         <th data-formatter="jFDateColumn">Date</th>
-                                        <th data-field="SRRef">pk</th>
-                                        <th data-field="BillNumber">BillNumber</th>
-                                        <th data-field="SalesReturnRef">SalesRef</th>
+                                        <th data-field="SRRef" data-filter-control="input">pk</th>
+                                        <th data-field="BillNumber" data-filter-control="input">BillNumber</th>
+                                        <th data-field="SalesReturnRef" data-filter-control="input">SalesRef</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -501,6 +498,7 @@
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.5/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
     <!-- Template Main JS File -->
     <script src="./assets/js/main.js"></script>
     <script type="module" src="./Js/StartFunc.js"></script>

@@ -1,6 +1,5 @@
 const StartFunc = ({ InData }) => {
     let LocalInData = InData;
-    console.log("inData:", LocalInData);
 
     let LocalTmeStamp = LocalInData.Date;
     let LocalSalesDes = ("SalereturnDescription" in LocalInData) ? LocalInData.SalereturnDescription : "";

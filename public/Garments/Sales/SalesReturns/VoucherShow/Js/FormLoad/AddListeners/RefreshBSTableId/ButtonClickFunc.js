@@ -6,7 +6,6 @@ let StartFunc = async () => {
 
     let [LocalPos, LocalSRVoucher] = await Promise.all([pos(), SRVoucher()]);
     let localBillsData = jFbillNumberFunc({ inSRVoucher: LocalSRVoucher, inPos: LocalPos });
-console.log("localBillsData:",localBillsData);
 
     AfterFetch({ inData: localBillsData })
 };
